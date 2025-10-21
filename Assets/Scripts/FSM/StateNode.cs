@@ -1,18 +1,22 @@
 using System.Collections.Generic;
+using FSM.Interfaces;
 
-class StateNode<T> where T : IState
+namespace FSM
 {
-    public T State { get; }
-    public HashSet<ITransition<T>> Transitions { get; }
-
-    public StateNode(T state)
+    public class StateNode<T> where T : IState
     {
-        State = state;
-        Transitions = new HashSet<ITransition<T>>();
-    }
+        public T State { get; }
+        public HashSet<ITransition<T>> Transitions { get; }
 
-    public void AddTransition(T targetState, IPredicate predicate)
-    {
-        Transitions.Add(new Transition<T>(targetState, predicate));
+        public StateNode(T state)
+        {
+            State = state;
+            Transitions = new HashSet<ITransition<T>>();
+        }
+
+        public void AddTransition(T targetState, IPredicate predicate)
+        {
+            Transitions.Add(new Transition<T>(targetState, predicate));
+        }
     }
 }

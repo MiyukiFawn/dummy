@@ -1,12 +1,17 @@
-public class Transition<T> : ITransition<T> where T : IState
+using FSM.Interfaces;
+
+namespace FSM
 {
-    public T TargetState { get; }
-
-    public IPredicate Predicate { get; }
-
-    public Transition(T targetState, IPredicate predicate)
+    public class Transition<T> : ITransition<T> where T : IState
     {
-        TargetState = targetState;
-        Predicate = predicate;
+        public T TargetState { get; }
+
+        public IPredicate Predicate { get; }
+
+        public Transition(T targetState, IPredicate predicate)
+        {
+            TargetState = targetState;
+            Predicate = predicate;
+        }
     }
 }

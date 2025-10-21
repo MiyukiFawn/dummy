@@ -1,76 +1,79 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
+using FSM.Interfaces;
 
-public class StateMachine<T> where T : IState
+namespace FSM
 {
-    private StateNode<T> Current;
-    private readonly Dictionary<Type, StateNode<T>> Nodes = new();
-    private readonly HashSet<ITransition<T>> AnyTransitions = new();
-    
-    public void Update()
+    public class StateMachine<T> where T : IState
     {
-        ITransition<T> transition = GetTransition();
-        if (transition != null) ChangeState(transition.TargetState);
+        private StateNode<T> _current;
+        private readonly Dictionary<Type, StateNode<T>> _nodes = new();
+        private readonly HashSet<ITransition<T>> _anyTransitions = new();
 
-        Current.State?.Update();
-    }
-
-    public void FixedUpdate()
-    {
-        Current.State?.FixedUpdate();
-    }
-
-    public void SetState(T state)
-    {
-        Current = Nodes[state.GetType()];
-        Current.State.OnEnter();
-    }
-
-    public void ChangeState(T newState)
-    {
-        if (newState.GetType() == Current.State.GetType()) return;
-
-        T previousState = Current.State;
-        T nextState = Nodes[newState.GetType()].State;
-
-        previousState?.OnExit();
-        nextState?.OnEnter();
-
-        Current = Nodes[newState.GetType()];
-    }
-
-    ITransition<T> GetTransition()
-    {
-        foreach (var transition in AnyTransitions) if (transition.Predicate.Evaluate()) return transition;
-        foreach (var transition in Current.Transitions) if (transition.Predicate.Evaluate()) return transition;
-
-        return null;
-    }
-
-    public void AddTransition(T from, T to, IPredicate condition)
-    {
-        StateNode<T> fromNode = GetOrAddNode(from);
-        StateNode<T> toNode = GetOrAddNode(to);
-
-        fromNode.AddTransition(toNode.State, condition);
-    }
-
-    public void AddAnyTransition(T to, IPredicate condition)
-    {
-        Transition<T> transition = new(to, condition);
-        AnyTransitions.Add(transition);
-    }
-
-    StateNode<T> GetOrAddNode(T state)
-    {
-        StateNode<T> node = Nodes.GetValueOrDefault(state.GetType());
-
-        if (node == null)
+        public void Update()
         {
-            node = new StateNode<T>(state);
-            Nodes.Add(state.GetType(), node);
+            ITransition<T> transition = GetTransition();
+            if (transition != null) ChangeState(transition.TargetState);
+
+            _current.State?.Update();
         }
 
-        return node;
+        public void FixedUpdate()
+        {
+            _current.State?.FixedUpdate();
+        }
+
+        public void SetState(T state)
+        {
+            _current = _nodes[state.GetType()];
+            _current.State.OnEnter();
+        }
+
+        public void ChangeState(T newState)
+        {
+            if (newState.GetType() == _current.State.GetType()) return;
+
+            T previousState = _current.State;
+            T nextState = _nodes[newState.GetType()].State;
+
+            previousState?.OnExit();
+            nextState?.OnEnter();
+
+            _current = _nodes[newState.GetType()];
+        }
+
+        private ITransition<T> GetTransition()
+        {
+            foreach (ITransition<T> transition in _anyTransitions.Where(transition => transition.Predicate.Evaluate()))
+                return transition;
+
+            return _current.Transitions.FirstOrDefault(transition => transition.Predicate.Evaluate());
+        }
+
+        public void AddTransition(T from, T to, IPredicate condition)
+        {
+            StateNode<T> fromNode = GetOrAddNode(from);
+            StateNode<T> toNode = GetOrAddNode(to);
+
+            fromNode.AddTransition(toNode.State, condition);
+        }
+
+        public void AddAnyTransition(T to, IPredicate condition)
+        {
+            Transition<T> transition = new(to, condition);
+            _anyTransitions.Add(transition);
+        }
+
+        private StateNode<T> GetOrAddNode(T state)
+        {
+            StateNode<T> node = _nodes.GetValueOrDefault(state.GetType());
+
+            if (node != null) return node;
+            node = new StateNode<T>(state);
+            _nodes.Add(state.GetType(), node);
+
+            return node;
+        }
     }
 }

@@ -1,13 +1,17 @@
 using System;
+using FSM.Interfaces;
 
-public class FuncPredicate : IPredicate
+namespace FSM
 {
-    private readonly Func<bool> function;
-
-    public FuncPredicate(Func<bool> function)
+    public class FuncPredicate : IPredicate
     {
-        this.function = function;
-    }
+        private readonly Func<bool> _function;
 
-    public bool Evaluate() => function.Invoke();
+        public FuncPredicate(Func<bool> function)
+        {
+            _function = function;
+        }
+
+        public bool Evaluate() => _function.Invoke();
+    }
 }

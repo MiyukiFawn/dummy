@@ -1,10 +1,25 @@
-public class PlayerBaseState : IState
+using FSM;
+using FSM.Interfaces;
+
+namespace Player
 {
-    public void FixedUpdate() { }
+    public abstract class PlayerBaseState : IState
+    {
+        protected StateMachine<PlayerBaseState> Fsm;
+        protected PlayerController Controller;
+        
+        protected PlayerBaseState(StateMachine<PlayerBaseState> fsm, PlayerController controller)
+        {
+            Fsm = fsm;
+            Controller = controller;
+        }
+        
+        public virtual void FixedUpdate() { }
 
-    public void OnEnter() { }
+        public virtual void OnEnter() { }
 
-    public void OnExit() { }
+        public virtual void OnExit() { }
 
-    public void Update() { }
+        public virtual void Update() { }
+    }
 }

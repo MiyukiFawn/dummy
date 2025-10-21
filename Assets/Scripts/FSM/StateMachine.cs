@@ -75,5 +75,11 @@ namespace FSM
 
             return node;
         }
+
+        public Type GetCurrentState()
+        {
+            if (_current == null) return null;
+            return _current.State.GetType();
+        }
     }
 }

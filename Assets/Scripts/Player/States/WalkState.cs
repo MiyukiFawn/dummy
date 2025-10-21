@@ -10,7 +10,7 @@ namespace Player.States
 
         public override void Update()
         {
-            Controller.RigidBody2D.linearVelocityX = 10;
+            Controller.MoveHorizontally(Controller.WalkSpeed * Controller.inputDir);
         }
     }
 }

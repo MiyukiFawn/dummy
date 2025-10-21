@@ -1,5 +1,6 @@
 ﻿using FSM;
 using Unity.VisualScripting;
+using UnityEngine;
 
 namespace Player.States
 {
@@ -11,7 +12,7 @@ namespace Player.States
 
         public override void OnEnter()
         {
-            Controller.RigidBody2D.linearVelocityX = 0;
+            Controller.RigidBody2D.linearVelocity = new Vector2(0, -1);
         }
     }
 }

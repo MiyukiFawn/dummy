@@ -351,7 +351,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 16
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -400,166 +400,12 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: 8bitmegaman_0
+      name: megaman_0
       rect:
         serializedVersion: 2
-        x: 30
-        y: 370
-        width: 9
-        height: 34
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: f21ff6a6d8658e330800000000000000
-      internalID: 3740334655907295535
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: 8bitmegaman_2
-      rect:
-        serializedVersion: 2
-        x: 102
-        y: 370
-        width: 23
-        height: 26
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 5a9e36819da2c4f00800000000000000
-      internalID: 1102303120704399781
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: 8bitmegaman_3
-      rect:
-        serializedVersion: 2
-        x: 132
-        y: 370
-        width: 23
-        height: 26
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: db5b9d568b02b0600800000000000000
-      internalID: 435477765326222781
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: 8bitmegaman_4
-      rect:
-        serializedVersion: 2
-        x: 159
-        y: 370
-        width: 22
-        height: 26
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 86b3de26d5cfa2090800000000000000
-      internalID: -8058351105204208792
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: 8bitmegaman_5
-      rect:
-        serializedVersion: 2
-        x: 187
-        y: 370
-        width: 26
-        height: 24
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: ae952ab77fe44b110800000000000000
-      internalID: 1275731419290819050
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: 8bitmegaman_6
-      rect:
-        serializedVersion: 2
-        x: 217
-        y: 370
-        width: 18
-        height: 26
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 0e3f3263568edc2b0800000000000000
-      internalID: -5562534443335027744
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: 8bitmegaman_7
-      rect:
-        serializedVersion: 2
-        x: 238
-        y: 370
-        width: 23
-        height: 24
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: b5299c1df514b2430800000000000000
-      internalID: 3759170193768157787
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: 8bitmegaman_8
-      rect:
-        serializedVersion: 2
-        x: 264
-        y: 370
-        width: 28
+        x: 31
+        y: 371
+        width: 7
         height: 32
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -567,42 +413,108 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: a945e62229b1e2df0800000000000000
-      internalID: -203194618728262502
+      spriteID: 7375caa6b259fb34a8c77b89fb12fa9d
+      internalID: -2073184736
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 8bitmegaman_9
+      name: megaman_1
       rect:
         serializedVersion: 2
-        x: 44
-        y: 370
-        width: 24
-        height: 13
+        x: 73
+        y: 387
+        width: 22
+        height: 4
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 05ba604d7a4d60340800000000000000
-      internalID: 4829781467683269456
+      spriteID: 304bd1c161d21c945b894be19aae5019
+      internalID: 324497281
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 8bitmegaman_10
+      name: megaman_2
       rect:
         serializedVersion: 2
-        x: 72
-        y: 370
+        x: 103
+        y: 371
+        width: 21
+        height: 24
+      alignment: 9
+      pivot: {x: 0.47619048, y: 0.5416667}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 555fe5c41f3c8ba40a3c99c5eebd25cd
+      internalID: -1141413650
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megaman_3
+      rect:
+        serializedVersion: 2
+        x: 133
+        y: 371
+        width: 21
+        height: 24
+      alignment: 9
+      pivot: {x: 0.47619048, y: 0.5416667}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f602d01ed9e7a4e4194f36bb9941037f
+      internalID: -744366638
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megaman_4
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 371
+        width: 20
+        height: 24
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5416667}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 32b432957ef7a724abf65ae90d957c36
+      internalID: 1540437506
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megaman_5
+      rect:
+        serializedVersion: 2
+        x: 188
+        y: 371
         width: 24
         height: 22
       alignment: 0
@@ -611,42 +523,130 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 15496c83032f1f340800000000000000
-      internalID: 4895960558853330001
+      spriteID: b64ccfe97157a964cb8af9694a851363
+      internalID: -1437359248
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 8bitmegaman_11
+      name: megaman_6
       rect:
         serializedVersion: 2
-        x: 13
-        y: 334
-        width: 33
-        height: 26
+        x: 218
+        y: 371
+        width: 16
+        height: 24
+      alignment: 9
+      pivot: {x: 0.5, y: 0.45833334}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 325608d6ce67e2544a52599a50d0b9d6
+      internalID: -186989686
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megaman_7
+      rect:
+        serializedVersion: 2
+        x: 239
+        y: 371
+        width: 21
+        height: 22
+      alignment: 9
+      pivot: {x: 0.52380955, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dbaff90798ea8094f82b769381a37baa
+      internalID: 1919561163
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megaman_8
+      rect:
+        serializedVersion: 2
+        x: 265
+        y: 371
+        width: 26
+        height: 30
+      alignment: 9
+      pivot: {x: 0.4615385, y: 0.4666667}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f30800d2dfb3f6b4990d7d8760aae9ee
+      internalID: 2028114981
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megaman_9
+      rect:
+        serializedVersion: 2
+        x: 45
+        y: 371
+        width: 22
+        height: 11
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 5ee3049c1b31c1b10800000000000000
-      internalID: 1953457992678522597
+      spriteID: 9dcb5e534e0851a4c865fa9ee0dcd1b1
+      internalID: -1550995997
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 8bitmegaman_12
+      name: megaman_10
       rect:
         serializedVersion: 2
-        x: 49
-        y: 334
+        x: 73
+        y: 371
+        width: 22
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a02374ffe3787374cb6c33e368cbf936
+      internalID: -1514745354
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megaman_11
+      rect:
+        serializedVersion: 2
+        x: 14
+        y: 335
         width: 31
         height: 24
       alignment: 0
@@ -655,130 +655,130 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 866049632f4836950800000000000000
-      internalID: 6441138067902563944
+      spriteID: db98a9a5888dd9547bac15316122b282
+      internalID: 1861744244
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 8bitmegaman_13
+      name: megaman_12
       rect:
         serializedVersion: 2
-        x: 83
-        y: 334
-        width: 28
-        height: 26
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 4055dfd4c891a9350800000000000000
-      internalID: 6024155541956023556
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: 8bitmegaman_14
-      rect:
-        serializedVersion: 2
-        x: 112
-        y: 334
-        width: 32
-        height: 24
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 06a6d22c8c85f7350800000000000000
-      internalID: 6016625246464731744
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: 8bitmegaman_15
-      rect:
-        serializedVersion: 2
-        x: 145
-        y: 334
-        width: 31
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: e260b8f7863b20740800000000000000
-      internalID: 5116849388044092974
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: 8bitmegaman_16
-      rect:
-        serializedVersion: 2
-        x: 181
-        y: 334
+        x: 50
+        y: 335
         width: 29
-        height: 26
+        height: 22
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 14e41d5006ac14150800000000000000
-      internalID: 5855183504321629761
+      spriteID: 20f49b95aa3f7d8498e8c222382c8deb
+      internalID: -1543947226
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 8bitmegaman_17
+      name: megaman_13
       rect:
         serializedVersion: 2
-        x: 212
-        y: 334
+        x: 84
+        y: 335
+        width: 26
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 16375453a15f293409a6e2252edcc7d6
+      internalID: 1749431869
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megaman_14
+      rect:
+        serializedVersion: 2
+        x: 113
+        y: 335
         width: 30
-        height: 32
+        height: 22
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 01589581edb49cbf0800000000000000
-      internalID: -303628082607454960
+      spriteID: a09b9eba147249c47957972562868e58
+      internalID: -534500330
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 8bitmegaman_18
+      name: megaman_15
       rect:
         serializedVersion: 2
-        x: 247
-        y: 334
+        x: 146
+        y: 335
+        width: 29
+        height: 30
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d8fab53b258ba7a4c852f7a2f4b80193
+      internalID: 1025808344
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megaman_16
+      rect:
+        serializedVersion: 2
+        x: 182
+        y: 335
+        width: 27
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dc657199d5dff4142810002afe8e142b
+      internalID: 745184641
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megaman_17
+      rect:
+        serializedVersion: 2
+        x: 213
+        y: 335
         width: 28
         height: 30
       alignment: 0
@@ -787,20 +787,174 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 07b9455846fb50020800000000000000
-      internalID: 2307460822551796592
+      spriteID: 7c7296bdc6a738844b982af526c72f5e
+      internalID: -1333833391
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 8bitmegaman_19
+      name: megaman_18
       rect:
         serializedVersion: 2
-        x: 279
-        y: 334
+        x: 248
+        y: 335
+        width: 26
+        height: 28
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c95dd7417eab0fa44ab86606f9093594
+      internalID: 1656509360
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megaman_19
+      rect:
+        serializedVersion: 2
+        x: 280
+        y: 335
+        width: 28
+        height: 22
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 44419c9a0c0aaf7489e0a7ebe0c1858c
+      internalID: 266454402
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megaman_20
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 295
+        width: 16
+        height: 29
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8dfc85e61cf7cbd49bcbf94611d86d8b
+      internalID: 1112126013
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megaman_21
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 295
+        width: 16
+        height: 29
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 48163df285dd7494798f47793e6773f0
+      internalID: -737559540
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megaman_22
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 295
+        width: 24
+        height: 29
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0def680a3473d9d4b861ca863d8c44fa
+      internalID: 934229855
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megaman_23
+      rect:
+        serializedVersion: 2
+        x: 92
+        y: 300
+        width: 16
+        height: 22
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: facc4a7047b0b9a46b53cb10edbd054f
+      internalID: -2100154073
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megaman_24
+      rect:
+        serializedVersion: 2
+        x: 116
+        y: 295
+        width: 27
+        height: 21
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0f91161f36e9a2146acda7a2e4096995
+      internalID: -2109111021
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megaman_25
+      rect:
+        serializedVersion: 2
+        x: 151
+        y: 295
         width: 30
         height: 24
       alignment: 0
@@ -809,86 +963,218 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: d1b7854eb19c56790800000000000000
-      internalID: -7537397279702353123
+      spriteID: ab632e3eff9dd1641817b52b0eb06f93
+      internalID: 167983592
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 8bitmegaman_20
+      name: megaman_26
       rect:
         serializedVersion: 2
-        x: 4
-        y: 294
-        width: 18
-        height: 31
+        x: 187
+        y: 295
+        width: 29
+        height: 12
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 1a0967f225318b970800000000000000
-      internalID: 8770781518008586401
+      spriteID: 7a5b7fcd3099afb4cac275b8555893a9
+      internalID: 144049137
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 8bitmegaman_21
+      name: megaman_27
+      rect:
+        serializedVersion: 2
+        x: 223
+        y: 295
+        width: 21
+        height: 25
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7d830ba260a37794aa3ff0af5411bdab
+      internalID: -106140030
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megaman_28
+      rect:
+        serializedVersion: 2
+        x: 250
+        y: 295
+        width: 21
+        height: 25
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 84f0f44b8faba964f85def07e87a3262
+      internalID: 2041926685
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megaman_29
+      rect:
+        serializedVersion: 2
+        x: 278
+        y: 295
+        width: 15
+        height: 25
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4a2a0ee0437b1a64e819f017d768b432
+      internalID: -952090901
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megaman_30
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 295
+        width: 19
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dcc3bc58957cc454f95eee3537151608
+      internalID: -500161968
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megaman_31
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 248
+        width: 21
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d217790e04c66244ca41720fd4112f58
+      internalID: 439297992
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megaman_32
       rect:
         serializedVersion: 2
         x: 31
-        y: 294
-        width: 18
-        height: 31
+        y: 248
+        width: 21
+        height: 24
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 0536e43aae8df9fc0800000000000000
-      internalID: -3485829084287704240
+      spriteID: b03e0791137a2d247a4492c8ba0e0689
+      internalID: -1147284570
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 8bitmegaman_22
+      name: megaman_33
       rect:
         serializedVersion: 2
-        x: 59
-        y: 294
-        width: 26
-        height: 31
+        x: 55
+        y: 248
+        width: 21
+        height: 24
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 45be5297ec8400920800000000000000
-      internalID: 2954441407188036436
+      spriteID: 464a01a1ccdce9c4aa2f4d5880fd369c
+      internalID: 1687023138
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 8bitmegaman_23
+      name: megaman_34
       rect:
         serializedVersion: 2
-        x: 91
-        y: 299
+        x: 82
+        y: 248
+        width: 21
+        height: 22
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bf5d98677f4bc0e4da59fb091a0ae1e8
+      internalID: 1524371424
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megaman_35
+      rect:
+        serializedVersion: 2
+        x: 108
+        y: 248
         width: 18
         height: 24
       alignment: 0
@@ -897,21 +1183,813 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 001a07649bf468660800000000000000
-      internalID: 7387679895917207808
+      spriteID: 762cde421a8f5fa4a9edb76e54613705
+      internalID: -1304251539
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 8bitmegaman_24
+      name: megaman_36
       rect:
         serializedVersion: 2
-        x: 115
-        y: 294
-        width: 29
+        x: 128
+        y: 247
+        width: 22
+        height: 22
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 85e114dd088d08b459493b51c7095f83
+      internalID: -55654827
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megaman_37
+      rect:
+        serializedVersion: 2
+        x: 153
+        y: 247
+        width: 24
+        height: 30
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f168281a6a9e12b4ca72b8787b137b35
+      internalID: 1758196046
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megaman_38
+      rect:
+        serializedVersion: 2
+        x: 185
+        y: 248
+        width: 23
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0e5559395adec5447b78f6f584fde1e6
+      internalID: -737040394
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megaman_39
+      rect:
+        serializedVersion: 2
+        x: 215
+        y: 248
+        width: 21
+        height: 22
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2962702666819044c84927c6f5eebdc1
+      internalID: -631832433
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megaman_40
+      rect:
+        serializedVersion: 2
+        x: 244
+        y: 248
+        width: 18
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b57d6afacaa2f6f489ed343e79c2f764
+      internalID: 1924442324
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megaman_41
+      rect:
+        serializedVersion: 2
+        x: 268
+        y: 248
+        width: 22
+        height: 22
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 463c36c046cb62a4a930cb37ad2ebe02
+      internalID: -1365199880
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megaman_42
+      rect:
+        serializedVersion: 2
+        x: 294
+        y: 248
+        width: 24
+        height: 30
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 75ef78bb11a839c43b177ff3364c3dd1
+      internalID: -2021030418
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megaman_43
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 205
+        width: 21
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c06a3993a65868d4696b02f0b0e15b97
+      internalID: 1793216963
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megaman_44
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 205
+        width: 21
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1e91e1c70d17bf1419803cb97b0718f4
+      internalID: -615167265
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megaman_45
+      rect:
+        serializedVersion: 2
+        x: 61
+        y: 205
+        width: 21
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f026e4238d302b1439daf568d8fcf341
+      internalID: -1568995119
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megaman_46
+      rect:
+        serializedVersion: 2
+        x: 91
+        y: 205
+        width: 21
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d655680e1b0f27a44b97d6ea0cec1e34
+      internalID: 688936252
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megaman_47
+      rect:
+        serializedVersion: 2
+        x: 121
+        y: 205
+        width: 21
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7308dbdc32f6df84e8894483d8667440
+      internalID: 841786499
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megaman_48
+      rect:
+        serializedVersion: 2
+        x: 152
+        y: 205
+        width: 21
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bad6a351a6bd52a41bc540b292e22863
+      internalID: -486247719
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megaman_49
+      rect:
+        serializedVersion: 2
+        x: 182
+        y: 205
+        width: 21
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4aa3ff621dc44754bbfa93050a5e05c7
+      internalID: -339898094
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megaman_50
+      rect:
+        serializedVersion: 2
+        x: 212
+        y: 205
+        width: 21
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 14bbeee46907b944db5fb14f0da006a2
+      internalID: -851660054
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megaman_51
+      rect:
+        serializedVersion: 2
+        x: 241
+        y: 205
+        width: 21
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 78a1337145da48747a51943b451059e1
+      internalID: -2124687168
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megaman_52
+      rect:
+        serializedVersion: 2
+        x: 271
+        y: 205
+        width: 21
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1fb0cbf01ac25934d819dc7f2c956ce4
+      internalID: 1119506223
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megaman_53
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 205
+        width: 21
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8ec59c735c1d6994cad1de4aa9e47477
+      internalID: 1156115419
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megaman_54
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 166
+        width: 21
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fa8b85808a2d9594f9046a654732ffc6
+      internalID: 293898340
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megaman_55
+      rect:
+        serializedVersion: 2
+        x: 37
+        y: 166
+        width: 16
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: deff536eb7c0df247a8cf5518423a593
+      internalID: 212812481
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megaman_56
+      rect:
+        serializedVersion: 2
+        x: 62
+        y: 166
+        width: 12
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 571ad8248d5c0ed499f848633c78c571
+      internalID: -61044513
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megaman_57
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 166
+        width: 17
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 27cb0908cad75c44896d7f83db188be7
+      internalID: 420459139
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megaman_58
+      rect:
+        serializedVersion: 2
+        x: 109
+        y: 166
+        width: 21
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a5bd86143f90aee498947d0b58a94b8d
+      internalID: 2086240017
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megaman_59
+      rect:
+        serializedVersion: 2
+        x: 137
+        y: 166
+        width: 17
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6956a1d0acbf0114eaca017548cf6bcc
+      internalID: -1380567450
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megaman_60
+      rect:
+        serializedVersion: 2
+        x: 164
+        y: 166
+        width: 12
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e61465a373dd01645bd6c111f293b6f6
+      internalID: 347052567
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megaman_61
+      rect:
+        serializedVersion: 2
+        x: 184
+        y: 166
+        width: 16
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7b2579ea65ca746489c965c8d922427c
+      internalID: 262013552
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megaman_62
+      rect:
+        serializedVersion: 2
+        x: 206
+        y: 166
+        width: 26
+        height: 30
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 71273d7012fa22a478736b6f5a88c4cf
+      internalID: -1466097180
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megaman_63
+      rect:
+        serializedVersion: 2
+        x: 239
+        y: 166
+        width: 19
+        height: 30
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 63d7d8f7bf76a484982bf86c7a94a6a1
+      internalID: -133598385
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megaman_64
+      rect:
+        serializedVersion: 2
+        x: 254
+        y: 180
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2a99233743cb63d47870868ac2625333
+      internalID: 828235729
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megaman_65
+      rect:
+        serializedVersion: 2
+        x: 266
+        y: 166
+        width: 26
+        height: 30
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 39922bb8408665b4995b4eaf87a59231
+      internalID: -1649702002
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megaman_66
+      rect:
+        serializedVersion: 2
+        x: 297
+        y: 180
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d4f48ae406353fd4cb22c3da7e703cdc
+      internalID: -1649379630
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megaman_67
+      rect:
+        serializedVersion: 2
+        x: 299
+        y: 166
+        width: 19
+        height: 30
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 80170cc71c0e7dc4d976a2a89a0f17b2
+      internalID: -1555829183
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megaman_68
+      rect:
+        serializedVersion: 2
+        x: 63
+        y: 128
+        width: 16
+        height: 29
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3dcaf2f3cc5a74b46b0518880fa86199
+      internalID: 320475525
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megaman_69
+      rect:
+        serializedVersion: 2
+        x: 85
+        y: 128
+        width: 16
+        height: 29
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cba166f393759194db87ed36e039977e
+      internalID: -1048500334
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megaman_70
+      rect:
+        serializedVersion: 2
+        x: 106
+        y: 128
+        width: 24
+        height: 29
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 46b742c6dc7fcf44f8d0500be005f93d
+      internalID: -1886796916
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megaman_71
+      rect:
+        serializedVersion: 2
+        x: 134
+        y: 128
+        width: 26
+        height: 30
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 829c94bad8fe8ee4694d0ef497d51b23
+      internalID: -1815921134
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megaman_72
+      rect:
+        serializedVersion: 2
+        x: 167
+        y: 128
+        width: 22
         height: 23
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -919,20 +1997,64 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 650062d222ba07380800000000000000
-      internalID: -8975485894074695594
+      spriteID: 33d88de1f97c3d34d91999096466fe7c
+      internalID: 1039327031
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 8bitmegaman_25
+      name: megaman_73
       rect:
         serializedVersion: 2
-        x: 150
-        y: 294
+        x: 196
+        y: 128
+        width: 22
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1d2cfbeeaae670b498b1d6ea88c9152c
+      internalID: -1913754926
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megaman_74
+      rect:
+        serializedVersion: 2
+        x: 227
+        y: 128
+        width: 21
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fec0cef3678640e49aa45a7d2d24ab6f
+      internalID: -332969910
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megaman_75
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 92
         width: 32
         height: 26
       alignment: 0
@@ -941,175 +2063,43 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 4aff5688e146a3af0800000000000000
-      internalID: -415909933278167132
+      spriteID: 128ffa1168db32e4ebfa6a660ac85164
+      internalID: 1113515133
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 8bitmegaman_26
-      rect:
-        serializedVersion: 2
-        x: 186
-        y: 294
-        width: 31
-        height: 14
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 8e3fca1e75fa3c0a0800000000000000
-      internalID: -6862448615199280152
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: 8bitmegaman_27
-      rect:
-        serializedVersion: 2
-        x: 222
-        y: 294
-        width: 23
-        height: 27
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: e7abc20693682e760800000000000000
-      internalID: 7485693111627987582
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: 8bitmegaman_28
-      rect:
-        serializedVersion: 2
-        x: 249
-        y: 294
-        width: 23
-        height: 27
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: f62db1004e33c3360800000000000000
-      internalID: 7150647362704888431
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: 8bitmegaman_29
-      rect:
-        serializedVersion: 2
-        x: 277
-        y: 294
-        width: 17
-        height: 27
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 2826c22c8f31702d0800000000000000
-      internalID: -3312657041777204606
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: 8bitmegaman_30
-      rect:
-        serializedVersion: 2
-        x: 299
-        y: 294
-        width: 21
-        height: 26
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 34e99620efa495d40800000000000000
-      internalID: 5573568468670324291
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: 8bitmegaman_31
-      rect:
-        serializedVersion: 2
-        x: 6
-        y: 247
-        width: 23
-        height: 26
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 488f6a612bff0a2d0800000000000000
-      internalID: -3269332189121677180
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: 8bitmegaman_32
-      rect:
-        serializedVersion: 2
-        x: 30
-        y: 247
-        width: 23
-        height: 26
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: a6ce43ba4d5425da0800000000000000
-      internalID: -5957622577349989270
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: 8bitmegaman_33
+      name: megaman_76
       rect:
         serializedVersion: 2
         x: 54
-        y: 247
-        width: 23
+        y: 91
+        width: 32
+        height: 27
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8eac239fb8ad66841a5b0a302ed8f818
+      internalID: -1688013204
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megaman_77
+      rect:
+        serializedVersion: 2
+        x: 91
+        y: 92
+        width: 32
         height: 26
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -1117,109 +2107,65 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 98d365c603b27cb00800000000000000
-      internalID: 848694541758643593
+      spriteID: bcfe91971252177418b605ab3a2e667a
+      internalID: 2075461256
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 8bitmegaman_34
-      rect:
-        serializedVersion: 2
-        x: 81
-        y: 247
-        width: 23
-        height: 24
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 4bc5d76c10df20ca0800000000000000
-      internalID: -6051996765165626188
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: 8bitmegaman_35
-      rect:
-        serializedVersion: 2
-        x: 107
-        y: 247
-        width: 20
-        height: 26
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: fc492223c943a46d0800000000000000
-      internalID: -3005531955855715121
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: 8bitmegaman_36
+      name: megaman_78
       rect:
         serializedVersion: 2
         x: 127
-        y: 246
-        width: 24
-        height: 24
+        y: 91
+        width: 32
+        height: 28
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: e6c4a4e77513321e0800000000000000
-      internalID: -2223879539140178834
+      spriteID: a1667356cbdfe8f45bf71715f1ea9eca
+      internalID: 1888969176
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 8bitmegaman_37
+      name: megaman_79
       rect:
         serializedVersion: 2
-        x: 152
-        y: 246
-        width: 26
-        height: 32
+        x: 162
+        y: 92
+        width: 32
+        height: 27
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: d29bda8ed9771bc70800000000000000
-      internalID: 8985094251678120237
+      spriteID: 6b2d6f46cfd9a25409809d715254ea85
+      internalID: -773942553
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 8bitmegaman_38
+      name: megaman_80
       rect:
         serializedVersion: 2
-        x: 184
-        y: 247
-        width: 25
+        x: 200
+        y: 93
+        width: 32
         height: 26
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -1227,747 +2173,65 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 85884857611f619d0800000000000000
-      internalID: -2803788639228360616
+      spriteID: b509d517fba70704dad9ad12052579d5
+      internalID: 1528767225
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 8bitmegaman_39
-      rect:
-        serializedVersion: 2
-        x: 214
-        y: 247
-        width: 23
-        height: 24
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 719e55e35cf753500800000000000000
-      internalID: 375346629086406935
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: 8bitmegaman_40
-      rect:
-        serializedVersion: 2
-        x: 243
-        y: 247
-        width: 20
-        height: 26
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: baff2871b3771a610800000000000000
-      internalID: 1630715635766067115
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: 8bitmegaman_41
-      rect:
-        serializedVersion: 2
-        x: 267
-        y: 247
-        width: 24
-        height: 24
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 03c88265eab0217a0800000000000000
-      internalID: -6408046476397081552
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: 8bitmegaman_42
-      rect:
-        serializedVersion: 2
-        x: 293
-        y: 247
-        width: 26
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 63d2bfc3f864944b0800000000000000
-      internalID: -5455751892565283530
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: 8bitmegaman_43
-      rect:
-        serializedVersion: 2
-        x: 2
-        y: 204
-        width: 23
-        height: 26
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: bf9e5c6bc615048d0800000000000000
-      internalID: -2864199835642893829
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: 8bitmegaman_44
-      rect:
-        serializedVersion: 2
-        x: 31
-        y: 204
-        width: 23
-        height: 26
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: a1abd4bff880a8b60800000000000000
-      internalID: 7749015523333880346
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: 8bitmegaman_45
-      rect:
-        serializedVersion: 2
-        x: 60
-        y: 204
-        width: 23
-        height: 26
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 89afeb5b1b854e880800000000000000
-      internalID: -8582637469579674984
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: 8bitmegaman_46
-      rect:
-        serializedVersion: 2
-        x: 90
-        y: 204
-        width: 23
-        height: 26
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 4d90f7423af43ddb0800000000000000
-      internalID: -4768380018344654380
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: 8bitmegaman_47
-      rect:
-        serializedVersion: 2
-        x: 120
-        y: 204
-        width: 23
-        height: 26
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 8effb691d284fe930800000000000000
-      internalID: 4174634738132975592
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: 8bitmegaman_48
-      rect:
-        serializedVersion: 2
-        x: 151
-        y: 204
-        width: 23
-        height: 26
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: d6685787314074b80800000000000000
-      internalID: -8410749297419254163
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: 8bitmegaman_49
-      rect:
-        serializedVersion: 2
-        x: 181
-        y: 204
-        width: 23
-        height: 26
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: da3754cf7d00fea30800000000000000
-      internalID: 4246613901284045741
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: 8bitmegaman_50
-      rect:
-        serializedVersion: 2
-        x: 211
-        y: 204
-        width: 23
-        height: 26
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 3e7d6bea6d155bfb0800000000000000
-      internalID: -4632706659184617501
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: 8bitmegaman_51
-      rect:
-        serializedVersion: 2
-        x: 240
-        y: 204
-        width: 23
-        height: 26
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 26222ff30c59bcfc0800000000000000
-      internalID: -3473518034647113118
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: 8bitmegaman_52
-      rect:
-        serializedVersion: 2
-        x: 270
-        y: 204
-        width: 23
-        height: 26
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: a35ef3dbefdf622e0800000000000000
-      internalID: -2150752501484231366
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: 8bitmegaman_53
-      rect:
-        serializedVersion: 2
-        x: 299
-        y: 204
-        width: 23
-        height: 26
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: a8dd2aa8833c26ac0800000000000000
-      internalID: -3863310882718950006
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: 8bitmegaman_54
-      rect:
-        serializedVersion: 2
-        x: 7
-        y: 165
-        width: 23
-        height: 26
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 20cec9e77e7f2bd30800000000000000
-      internalID: 4445888355801820162
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: 8bitmegaman_55
-      rect:
-        serializedVersion: 2
-        x: 36
-        y: 165
-        width: 18
-        height: 26
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 12f07a3f4dbb00880800000000000000
-      internalID: -8646704761256079583
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: 8bitmegaman_56
-      rect:
-        serializedVersion: 2
-        x: 61
-        y: 165
-        width: 14
-        height: 26
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: d0ebc9e1adc630390800000000000000
-      internalID: -7853313641131753971
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: 8bitmegaman_57
-      rect:
-        serializedVersion: 2
-        x: 83
-        y: 165
-        width: 19
-        height: 26
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 36c46447767f75c80800000000000000
-      internalID: -8333920561721357213
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: 8bitmegaman_58
-      rect:
-        serializedVersion: 2
-        x: 108
-        y: 165
-        width: 23
-        height: 26
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: ab6c5168b21a9c790800000000000000
-      internalID: -7509293695358351686
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: 8bitmegaman_59
-      rect:
-        serializedVersion: 2
-        x: 136
-        y: 165
-        width: 19
-        height: 26
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: f3f91dc32f2d29a80800000000000000
-      internalID: -8461468812031451329
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: 8bitmegaman_60
-      rect:
-        serializedVersion: 2
-        x: 163
-        y: 165
-        width: 14
-        height: 26
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 1cbb90f4b12bb37b0800000000000000
-      internalID: -5243401510782911551
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: 8bitmegaman_61
-      rect:
-        serializedVersion: 2
-        x: 183
-        y: 165
-        width: 18
-        height: 26
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 899486f20cf78a200800000000000000
-      internalID: 191543447569058200
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: 8bitmegaman_62
-      rect:
-        serializedVersion: 2
-        x: 205
-        y: 165
-        width: 28
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 08d22289cc4264f50800000000000000
-      internalID: 6865215143117204864
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: 8bitmegaman_63
+      name: megaman_81
       rect:
         serializedVersion: 2
         x: 238
-        y: 165
-        width: 21
-        height: 32
+        y: 91
+        width: 33
+        height: 34
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 3ddbdae057ae61d70800000000000000
-      internalID: 9013649492706966995
+      spriteID: 350af9163193fe8409c8672ffd709369
+      internalID: 1092564267
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 8bitmegaman_64
+      name: megaman_82
       rect:
         serializedVersion: 2
-        x: 253
-        y: 179
-        width: 8
-        height: 8
+        x: 280
+        y: 91
+        width: 29
+        height: 36
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 3982d1169b2e842c0800000000000000
-      internalID: -4447055346202236781
+      spriteID: 0bc7e15429eaf14469efbb77b01279a7
+      internalID: -1360815241
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 8bitmegaman_65
-      rect:
-        serializedVersion: 2
-        x: 265
-        y: 165
-        width: 28
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 082ab208f7af0e3e0800000000000000
-      internalID: -2026344406798589312
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: 8bitmegaman_66
-      rect:
-        serializedVersion: 2
-        x: 296
-        y: 179
-        width: 8
-        height: 8
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 390621b78b9499520800000000000000
-      internalID: 2709277707527676051
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: 8bitmegaman_67
-      rect:
-        serializedVersion: 2
-        x: 298
-        y: 165
-        width: 21
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 884c3f6b9b7dead90800000000000000
-      internalID: -7084487971168861048
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: 8bitmegaman_68
-      rect:
-        serializedVersion: 2
-        x: 62
-        y: 127
-        width: 18
-        height: 31
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 4e89855d17baeee30800000000000000
-      internalID: 4534750380207675620
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: 8bitmegaman_69
-      rect:
-        serializedVersion: 2
-        x: 84
-        y: 127
-        width: 18
-        height: 31
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: abde426f8135f0d90800000000000000
-      internalID: -7129388318430270022
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: 8bitmegaman_70
-      rect:
-        serializedVersion: 2
-        x: 105
-        y: 127
-        width: 26
-        height: 31
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: f13e358e1c9933040800000000000000
-      internalID: 4626210300345180959
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: 8bitmegaman_71
+      name: megaman_83
       rect:
         serializedVersion: 2
         x: 133
-        y: 127
-        width: 28
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: fe73be48c1cd20700800000000000000
-      internalID: 505208123266119663
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: 8bitmegaman_72
-      rect:
-        serializedVersion: 2
-        x: 166
-        y: 127
-        width: 24
+        y: 53
+        width: 21
         height: 25
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -1975,142 +2239,384 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 9210a02c36a621c70800000000000000
-      internalID: 8940325186973597993
+      spriteID: 6fb8d65d8d3150d4aa377419d4bdd807
+      internalID: 331493817
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 8bitmegaman_73
+      name: megaman_84
       rect:
         serializedVersion: 2
-        x: 195
-        y: 127
-        width: 24
-        height: 26
+        x: 241
+        y: 50
+        width: 7
+        height: 32
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 13a2fe4613c84a4f0800000000000000
-      internalID: -818375088499905999
+      spriteID: afd31d224fba07b418c1af1455bc2cc1
+      internalID: -1615393514
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 8bitmegaman_74
+      name: megaman_85
       rect:
         serializedVersion: 2
-        x: 226
-        y: 127
-        width: 23
-        height: 26
+        x: 262
+        y: 78
+        width: 8
+        height: 4
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 402ab0cc5927ee520800000000000000
-      internalID: 2733248011559477764
+      spriteID: b52c051fd2d6e6b49aa9459f293d28eb
+      internalID: -395520811
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 8bitmegaman_83
+      name: megaman_86
       rect:
         serializedVersion: 2
-        x: 54
-        y: 52
+        x: 55
+        y: 53
+        width: 19
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 24cdfbb36f3104640bd3637b013323b6
+      internalID: 418252684
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megaman_87
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 53
+        width: 15
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d88577be105231a4597d18d8f05f0199
+      internalID: -1878437386
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megaman_88
+      rect:
+        serializedVersion: 2
+        x: 107
+        y: 53
         width: 21
-        height: 26
+        height: 24
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: b7117606014e7fe50800000000000000
-      internalID: 6843188917800735099
+      spriteID: 4b0698d169f16a44e98743032b267e86
+      internalID: 1462262582
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 8bitmegaman_84
+      name: megaman_89
       rect:
         serializedVersion: 2
-        x: 82
-        y: 52
+        x: 159
+        y: 53
+        width: 21
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e7fac4f763fe2334d865da9cf63f4022
+      internalID: 1943231766
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megaman_90
+      rect:
+        serializedVersion: 2
+        x: 185
+        y: 53
+        width: 21
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f83d00ac03df26b4abe22e044f0fee10
+      internalID: -1944567555
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megaman_91
+      rect:
+        serializedVersion: 2
+        x: 211
+        y: 53
+        width: 21
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5dbd315de28c2c54b84efec768f547db
+      internalID: -1379396450
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megaman_92
+      rect:
+        serializedVersion: 2
+        x: 255
+        y: 70
+        width: 22
+        height: 4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f2387ad8b193ba6499667945894d7552
+      internalID: -603812587
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megaman_93
+      rect:
+        serializedVersion: 2
+        x: 255
+        y: 62
+        width: 22
+        height: 4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 010ddfe545141d641abd67410f582995
+      internalID: 1065834337
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megaman_94
+      rect:
+        serializedVersion: 2
+        x: 255
+        y: 50
+        width: 22
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ed839c1d7f4006e4a8acc28e09777cfd
+      internalID: 1215872155
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megaman_95
+      rect:
+        serializedVersion: 2
+        x: 71
+        y: 16
+        width: 26
+        height: 29
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: efdeab45e2d01c341b50d96d84bc6059
+      internalID: -1905130995
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megaman_96
+      rect:
+        serializedVersion: 2
+        x: 103
+        y: 16
+        width: 24
+        height: 22
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7f7b10c82e0e0d547964b09830009336
+      internalID: -305031719
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megaman_97
+      rect:
+        serializedVersion: 2
+        x: 133
+        y: 16
         width: 17
-        height: 26
+        height: 24
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: ebfbacc6eec271bb0800000000000000
-      internalID: -4965450661613617218
+      spriteID: 129bc85e2ce2f354e914bb7013ed5075
+      internalID: 708593064
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 8bitmegaman_85
+      name: megaman_98
       rect:
         serializedVersion: 2
-        x: 106
-        y: 52
-        width: 23
-        height: 26
+        x: 156
+        y: 16
+        width: 22
+        height: 22
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 6c62c378f8f46e860800000000000000
-      internalID: 7558816502455740102
+      spriteID: 61a853ff42ebada45860d03cfcdbfb83
+      internalID: -929547196
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 8bitmegaman_86
+      name: megaman_99
       rect:
         serializedVersion: 2
-        x: 132
-        y: 52
-        width: 23
-        height: 27
+        x: 196
+        y: 4
+        width: 32
+        height: 34
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: fd15a0bc9e57f43f0800000000000000
-      internalID: -914382552338640417
+      spriteID: 4e72fb3556b09fa40bc0609d93caf3a2
+      internalID: -808403952
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: megaman_100
+      rect:
+        serializedVersion: 2
+        x: 230
+        y: 15
+        width: 32
+        height: 23
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 49fe56872488bd647a72c506c1f08472
+      internalID: -1026554615
       vertices: []
       indices: 
       edges: []
@@ -2127,110 +2633,111 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries: []
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":64.0,"y":64.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":0,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
-      8bitmegaman_0: 3740334655907295535
-      8bitmegaman_1: -8540293375480343407
-      8bitmegaman_10: 4895960558853330001
-      8bitmegaman_100: 5175159058209664479
-      8bitmegaman_11: 1953457992678522597
-      8bitmegaman_12: 6441138067902563944
-      8bitmegaman_13: 6024155541956023556
-      8bitmegaman_14: 6016625246464731744
-      8bitmegaman_15: 5116849388044092974
-      8bitmegaman_16: 5855183504321629761
-      8bitmegaman_17: -303628082607454960
-      8bitmegaman_18: 2307460822551796592
-      8bitmegaman_19: -7537397279702353123
-      8bitmegaman_2: 1102303120704399781
-      8bitmegaman_20: 8770781518008586401
-      8bitmegaman_21: -3485829084287704240
-      8bitmegaman_22: 2954441407188036436
-      8bitmegaman_23: 7387679895917207808
-      8bitmegaman_24: -8975485894074695594
-      8bitmegaman_25: -415909933278167132
-      8bitmegaman_26: -6862448615199280152
-      8bitmegaman_27: 7485693111627987582
-      8bitmegaman_28: 7150647362704888431
-      8bitmegaman_29: -3312657041777204606
-      8bitmegaman_3: 435477765326222781
-      8bitmegaman_30: 5573568468670324291
-      8bitmegaman_31: -3269332189121677180
-      8bitmegaman_32: -5957622577349989270
-      8bitmegaman_33: 848694541758643593
-      8bitmegaman_34: -6051996765165626188
-      8bitmegaman_35: -3005531955855715121
-      8bitmegaman_36: -2223879539140178834
-      8bitmegaman_37: 8985094251678120237
-      8bitmegaman_38: -2803788639228360616
-      8bitmegaman_39: 375346629086406935
-      8bitmegaman_4: -8058351105204208792
-      8bitmegaman_40: 1630715635766067115
-      8bitmegaman_41: -6408046476397081552
-      8bitmegaman_42: -5455751892565283530
-      8bitmegaman_43: -2864199835642893829
-      8bitmegaman_44: 7749015523333880346
-      8bitmegaman_45: -8582637469579674984
-      8bitmegaman_46: -4768380018344654380
-      8bitmegaman_47: 4174634738132975592
-      8bitmegaman_48: -8410749297419254163
-      8bitmegaman_49: 4246613901284045741
-      8bitmegaman_5: 1275731419290819050
-      8bitmegaman_50: -4632706659184617501
-      8bitmegaman_51: -3473518034647113118
-      8bitmegaman_52: -2150752501484231366
-      8bitmegaman_53: -3863310882718950006
-      8bitmegaman_54: 4445888355801820162
-      8bitmegaman_55: -8646704761256079583
-      8bitmegaman_56: -7853313641131753971
-      8bitmegaman_57: -8333920561721357213
-      8bitmegaman_58: -7509293695358351686
-      8bitmegaman_59: -8461468812031451329
-      8bitmegaman_6: -5562534443335027744
-      8bitmegaman_60: -5243401510782911551
-      8bitmegaman_61: 191543447569058200
-      8bitmegaman_62: 6865215143117204864
-      8bitmegaman_63: 9013649492706966995
-      8bitmegaman_64: -4447055346202236781
-      8bitmegaman_65: -2026344406798589312
-      8bitmegaman_66: 2709277707527676051
-      8bitmegaman_67: -7084487971168861048
-      8bitmegaman_68: 4534750380207675620
-      8bitmegaman_69: -7129388318430270022
-      8bitmegaman_7: 3759170193768157787
-      8bitmegaman_70: 4626210300345180959
-      8bitmegaman_71: 505208123266119663
-      8bitmegaman_72: 8940325186973597993
-      8bitmegaman_73: -818375088499905999
-      8bitmegaman_74: 2733248011559477764
-      8bitmegaman_75: 8179748906346830624
-      8bitmegaman_76: 1546376536709033998
-      8bitmegaman_77: -645914303757976741
-      8bitmegaman_78: 4075959476711328792
-      8bitmegaman_79: 8777225464834221386
-      8bitmegaman_8: -203194618728262502
-      8bitmegaman_80: 2673037715760950817
-      8bitmegaman_81: -8410140032914755791
-      8bitmegaman_82: -6709029515526246780
-      8bitmegaman_83: 6843188917800735099
-      8bitmegaman_84: -4965450661613617218
-      8bitmegaman_85: 7558816502455740102
-      8bitmegaman_86: -914382552338640417
-      8bitmegaman_87: 6229215146725851755
-      8bitmegaman_88: 8355583283601756059
-      8bitmegaman_89: 6036082466617817940
-      8bitmegaman_9: 4829781467683269456
-      8bitmegaman_90: 9111291692416436202
-      8bitmegaman_91: -920338138519952736
-      8bitmegaman_92: -7185958538558194566
-      8bitmegaman_93: -5410975222301687419
-      8bitmegaman_94: -1396672695373861878
-      8bitmegaman_95: 9222670278071084021
-      8bitmegaman_96: 6139265170131189259
-      8bitmegaman_97: 8089739769050246951
-      8bitmegaman_98: 3741227900792258452
-      8bitmegaman_99: 3545483209231705399
       megaman_0: -2073184736
+      megaman_1: 324497281
+      megaman_10: -1514745354
+      megaman_100: -1026554615
+      megaman_11: 1861744244
+      megaman_12: -1543947226
+      megaman_13: 1749431869
+      megaman_14: -534500330
+      megaman_15: 1025808344
+      megaman_16: 745184641
+      megaman_17: -1333833391
+      megaman_18: 1656509360
+      megaman_19: 266454402
+      megaman_2: -1141413650
+      megaman_20: 1112126013
+      megaman_21: -737559540
+      megaman_22: 934229855
+      megaman_23: -2100154073
+      megaman_24: -2109111021
+      megaman_25: 167983592
+      megaman_26: 144049137
+      megaman_27: -106140030
+      megaman_28: 2041926685
+      megaman_29: -952090901
+      megaman_3: -744366638
+      megaman_30: -500161968
+      megaman_31: 439297992
+      megaman_32: -1147284570
+      megaman_33: 1687023138
+      megaman_34: 1524371424
+      megaman_35: -1304251539
+      megaman_36: -55654827
+      megaman_37: 1758196046
+      megaman_38: -737040394
+      megaman_39: -631832433
+      megaman_4: 1540437506
+      megaman_40: 1924442324
+      megaman_41: -1365199880
+      megaman_42: -2021030418
+      megaman_43: 1793216963
+      megaman_44: -615167265
+      megaman_45: -1568995119
+      megaman_46: 688936252
+      megaman_47: 841786499
+      megaman_48: -486247719
+      megaman_49: -339898094
+      megaman_5: -1437359248
+      megaman_50: -851660054
+      megaman_51: -2124687168
+      megaman_52: 1119506223
+      megaman_53: 1156115419
+      megaman_54: 293898340
+      megaman_55: 212812481
+      megaman_56: -61044513
+      megaman_57: 420459139
+      megaman_58: 2086240017
+      megaman_59: -1380567450
+      megaman_6: -186989686
+      megaman_60: 347052567
+      megaman_61: 262013552
+      megaman_62: -1466097180
+      megaman_63: -133598385
+      megaman_64: 828235729
+      megaman_65: -1649702002
+      megaman_66: -1649379630
+      megaman_67: -1555829183
+      megaman_68: 320475525
+      megaman_69: -1048500334
+      megaman_7: 1919561163
+      megaman_70: -1886796916
+      megaman_71: -1815921134
+      megaman_72: 1039327031
+      megaman_73: -1913754926
+      megaman_74: -332969910
+      megaman_75: 1113515133
+      megaman_76: -1688013204
+      megaman_77: 2075461256
+      megaman_78: 1888969176
+      megaman_79: -773942553
+      megaman_8: 2028114981
+      megaman_80: 1528767225
+      megaman_81: 1092564267
+      megaman_82: -1360815241
+      megaman_83: 331493817
+      megaman_84: -1615393514
+      megaman_85: -395520811
+      megaman_86: 418252684
+      megaman_87: -1878437386
+      megaman_88: 1462262582
+      megaman_89: 1943231766
+      megaman_9: -1550995997
+      megaman_90: -1944567555
+      megaman_91: -1379396450
+      megaman_92: -603812587
+      megaman_93: 1065834337
+      megaman_94: 1215872155
+      megaman_95: -1905130995
+      megaman_96: -305031719
+      megaman_97: 708593064
+      megaman_98: -929547196
+      megaman_99: -808403952
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

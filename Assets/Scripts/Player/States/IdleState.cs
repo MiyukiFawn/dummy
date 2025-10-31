@@ -6,13 +6,14 @@ namespace Player.States
 {
     public class IdleState : PlayerBaseState
     {
-        public IdleState(StateMachine<PlayerBaseState> fsm, PlayerController controller) : base(fsm, controller)
+        public IdleState(StateMachine<PlayerBaseState> fsm, PlayerController controller, Animator animator) : base(fsm, controller, animator)
         {
         }
 
         public override void OnEnter()
         {
-            Controller.RigidBody2D.linearVelocity = new Vector2(0, -1);
+            Controller.MoveHorizontally(0);
+            Controller.MoveVertically(-0.1f);
         }
     }
 }

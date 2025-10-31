@@ -1,5 +1,6 @@
 using FSM;
 using FSM.Interfaces;
+using UnityEngine;
 
 namespace Player
 {
@@ -7,11 +8,13 @@ namespace Player
     {
         protected StateMachine<PlayerBaseState> Fsm;
         protected PlayerController Controller;
-        
-        protected PlayerBaseState(StateMachine<PlayerBaseState> fsm, PlayerController controller)
+        protected Animator Animator;
+
+        protected PlayerBaseState(StateMachine<PlayerBaseState> fsm, PlayerController controller, Animator animator)
         {
             Fsm = fsm;
             Controller = controller;
+            Animator = animator;
         }
         
         public virtual void FixedUpdate() { }

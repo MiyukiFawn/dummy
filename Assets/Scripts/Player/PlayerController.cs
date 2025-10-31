@@ -33,10 +33,12 @@ namespace Player
         [SerializeField][Range(0.01f, 0.2f)] private float _distanceFromFloor = 0.1f;
         [SerializeField][Range(0, 0.5f)] private float _fRaysTreshold;
         [SerializeField][Range(0.1f, 1)] private float _fRayLenght = 0.5f;
+        [SerializeField] private SpriteRenderer _sprite;
 
         [DoNotSerialize] public Rigidbody2D RigidBody2D { get; private set; }
 
         private StateMachine<PlayerBaseState> _fsm;
+        private Animator _animator;
 
         #region Input Actions
 
@@ -58,6 +60,8 @@ namespace Player
         private void Awake()
         {
             RigidBody2D = GetComponent<Rigidbody2D>();
+            _collider = GetComponent<CapsuleCollider2D>();
+            _animator = GetComponent<Animator>();
 
             SetupInputs();
             SetupStateMachine();
@@ -75,15 +79,15 @@ namespace Player
             _fsm = new StateMachine<PlayerBaseState>();
 
             // Declare States
-            PlayerBaseState idleState   = new IdleState(_fsm, this);
-            PlayerBaseState walkState   = new WalkState(_fsm, this);
-            PlayerBaseState jumpState   = new JumpState(_fsm, this);
-            PlayerBaseState fallState   = new FallState(_fsm, this);
-            PlayerBaseState landState   = new LandState(_fsm, this);
-            PlayerBaseState slideState  = new SlideState(_fsm, this);
-            PlayerBaseState climbState  = new ClimbState(_fsm, this);
-            PlayerBaseState damageState = new DamageState(_fsm, this);
-            PlayerBaseState deathState  = new DeathState(_fsm, this);
+            PlayerBaseState idleState   = new IdleState(_fsm, this, _animator);
+            PlayerBaseState walkState   = new WalkState(_fsm, this, _animator);
+            PlayerBaseState jumpState   = new JumpState(_fsm, this, _animator, _jumpAction);
+            PlayerBaseState fallState   = new FallState(_fsm, this, _animator);
+            PlayerBaseState landState   = new LandState(_fsm, this, _animator);
+            PlayerBaseState slideState  = new SlideState(_fsm, this, _animator);
+            PlayerBaseState climbState  = new ClimbState(_fsm, this, _animator);
+            PlayerBaseState damageState = new DamageState(_fsm, this, _animator);
+            PlayerBaseState deathState  = new DeathState(_fsm, this, _animator);
 
             // Declare Transitions
             _fsm.AddTransition(idleState, walkState, new FuncPredicate(() => inputDir != 0));
@@ -96,6 +100,7 @@ namespace Player
             _fsm.AddTransition(walkState, fallState, new FuncPredicate(() => !IsOnGround && RigidBody2D.linearVelocityY < 0));
             _fsm.AddTransition(jumpState, fallState, new FuncPredicate(() => !IsOnGround && RigidBody2D.linearVelocityY < 0));
 
+            _fsm.AddTransition(jumpState, idleState, new FuncPredicate(() => IsOnGround));
             _fsm.AddTransition(fallState, idleState, new FuncPredicate(() => IsOnGround));
 
             _fsm.SetState(idleState);
@@ -138,23 +143,34 @@ namespace Player
 
                 if (_fsm != null)
                 {
-                    Handles.Label(transform.position * new Vector2(0, 1), _fsm.GetCurrentState().ToString());
+                    Handles.Label(new Vector2(transform.position.x, transform.position.y + 1), _fsm.GetCurrentState().ToString());
                 }
             }
         }
 
-        public void MoveHorizontally(float velocity)
+        public void MoveHorizontally(float horizontalVelocity)
         {
-            RigidBody2D.linearVelocityX = velocity;
+            Vector2 velocity = new Vector2(horizontalVelocity, RigidBody2D.linearVelocity.y);
+            RigidBody2D.linearVelocity = velocity;
+        }
+
+        public void MoveVertically(float verticalVelocity)
+        {
+            Vector2 velocity = new Vector2(RigidBody2D.linearVelocity.x, verticalVelocity);
+            RigidBody2D.linearVelocity = velocity;
         }
 
         private void Update()
         {
+            GroundCheck();
+
             JumpVelocity = (2.0f * JumpHeight) / TimeToPeak;
             JumpGravity  = (2.0f * JumpHeight) / (TimeToPeak * TimeToPeak);
             FallGravity  = (2.0f * JumpHeight) / (TimeToFall * TimeToFall);
 
             inputDir = _moveAction.ReadValue<float>();
+            if (inputDir > 0) _sprite.flipX = false;
+            else if (inputDir < 0) _sprite.flipX = true;
 
             _fsm.Update();
         }

@@ -7,6 +7,8 @@ namespace FSM
 {
     public class StateMachine<T> where T : IState
     {
+        public Type PreviousState { get; private set; }
+
         private StateNode<T> _current;
         private readonly Dictionary<Type, StateNode<T>> _nodes = new();
         private readonly HashSet<ITransition<T>> _anyTransitions = new();
@@ -40,6 +42,7 @@ namespace FSM
             previousState?.OnExit();
             nextState?.OnEnter();
 
+            PreviousState = previousState?.GetType();
             _current = _nodes[newState.GetType()];
         }
 

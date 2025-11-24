@@ -1,193 +1,110 @@
 using System;
-using FSM;
-using Player.States;
+using Player.StateMachine;
+using StateMachine;
 using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.Serialization;
 
 namespace Player
 {
     public class PlayerController : MonoBehaviour
     {
-        public bool _drawDebugLines = false;
+        [SerializeField] private bool drawGizmos = false;
+        [SerializeField][Header("Configuration")] private PlayerConfig config;
+        [SerializeField] private InputActionAsset inputActions;
 
-        public InputActionAsset InputActions;
+        private FiniteStateMachine<PlayerBaseState> _stateMachine;
 
-        [Header("Movement")]
-        public float WalkSpeed = 10;
+        private PlayerContext _context;
 
-        [Header("Jump")]
-        [Min(1)]          public int   MaxJumpCount = 1;
-        [Min(1)]          public float JumpHeight = 1;
-        [Min(0.1f)]       public float TimeToPeak = 1;
-        [Min(0.1f)]       public float TimeToFall = 1;
-        [Min(0)]          public float MaxFallSpeed = 25;
-        [Min(1)]          public float ReleaseJumpSpeedMultiplyer = 1;
-        [Range(0.01f, 1)] public float CoyoteTime = 0.2f;
-        [Range(0.01f, 1)] public float JumpBuffer = 0.2f;
-
-        [Header("Ground detection")]
-        [SerializeField] private LayerMask _groundLayer;
-        [SerializeField][Range(2, 14)] private int nOfRaysVertical = 2;
-        [SerializeField][Range(0.01f, 0.2f)] private float _distanceFromFloor = 0.1f;
-        [SerializeField][Range(0, 0.5f)] private float _fRaysTreshold;
-        [SerializeField][Range(0.1f, 1)] private float _fRayLenght = 0.5f;
-        [SerializeField] private SpriteRenderer _sprite;
-
-        [DoNotSerialize] public Rigidbody2D RigidBody2D { get; private set; }
-
-        private StateMachine<PlayerBaseState> _fsm;
-        private Animator _animator;
-
-        #region Input Actions
-
-        private InputAction _moveAction;
-        private InputAction _jumpAction;
-
-        #endregion
-
-        [DoNotSerialize] public float inputDir = 0;
-
+        private Rigidbody2D _rb;
         private CapsuleCollider2D _collider;
-
-        [DoNotSerialize] public bool IsOnGround;
-
-        [DoNotSerialize] public float JumpVelocity { get; private set; }
-        [DoNotSerialize] public float JumpGravity { get; private set; }
-        [DoNotSerialize] public float FallGravity { get; private set; }
 
         private void Awake()
         {
-            RigidBody2D = GetComponent<Rigidbody2D>();
+            _rb = GetComponent<Rigidbody2D>();
             _collider = GetComponent<CapsuleCollider2D>();
-            _animator = GetComponent<Animator>();
 
-            SetupInputs();
-            SetupStateMachine();
-        }
-
-        private void SetupInputs()
-        {
-            _moveAction = InputActions.FindAction("Move");
-            _jumpAction = InputActions.FindAction("Jump");
-        }
-
-        private void SetupStateMachine()
-        {
-            // Set State Machine
-            _fsm = new StateMachine<PlayerBaseState>();
-
-            // Declare States
-            PlayerBaseState idleState   = new IdleState(_fsm, this, _animator);
-            PlayerBaseState walkState   = new WalkState(_fsm, this, _animator);
-            PlayerBaseState jumpState   = new JumpState(_fsm, this, _animator, _jumpAction);
-            PlayerBaseState fallState   = new FallState(_fsm, this, _animator);
-            PlayerBaseState landState   = new LandState(_fsm, this, _animator);
-            PlayerBaseState slideState  = new SlideState(_fsm, this, _animator);
-            PlayerBaseState climbState  = new ClimbState(_fsm, this, _animator);
-            PlayerBaseState damageState = new DamageState(_fsm, this, _animator);
-            PlayerBaseState deathState  = new DeathState(_fsm, this, _animator);
-
-            // Declare Transitions
-            _fsm.AddTransition(idleState, walkState, new FuncPredicate(() => inputDir != 0));
-            _fsm.AddTransition(walkState, idleState, new FuncPredicate(() => inputDir == 0));
-
-            _fsm.AddTransition(idleState, jumpState, new FuncPredicate(() => _jumpAction.WasPressedThisFrame()));
-            _fsm.AddTransition(walkState, jumpState, new FuncPredicate(() => _jumpAction.WasPressedThisFrame()));
-
-            _fsm.AddTransition(idleState, fallState, new FuncPredicate(() => !IsOnGround && RigidBody2D.linearVelocityY < 0));
-            _fsm.AddTransition(walkState, fallState, new FuncPredicate(() => !IsOnGround && RigidBody2D.linearVelocityY < 0));
-            _fsm.AddTransition(jumpState, fallState, new FuncPredicate(() => !IsOnGround && RigidBody2D.linearVelocityY < 0));
-
-            _fsm.AddTransition(jumpState, idleState, new FuncPredicate(() => IsOnGround));
-            _fsm.AddTransition(fallState, idleState, new FuncPredicate(() => IsOnGround));
-
-            _fsm.SetState(idleState);
-        }
-
-        public void GroundCheck()
-        {
-            float dstRays = (_collider.bounds.size.x / (nOfRaysVertical - 1)) - _fRaysTreshold / (nOfRaysVertical - 1);
-            bool _isGrounded = false;
-
-            for (var i = 0; i < nOfRaysVertical; i++)
+            _context = new PlayerContext(config)
             {
-                Vector3 rayPosition = new Vector3((_collider.bounds.extents.x - (_fRaysTreshold / 2) - (dstRays * i)), _collider.bounds.extents.y);
+                MoveAction = inputActions.FindAction("Move"),
+                JumpAction = inputActions.FindAction("Jump")
+            };
 
-                RaycastHit2D hit = Physics2D.Raycast(_collider.bounds.center - rayPosition, Vector2.down, _fRayLenght, _groundLayer);
-                if (hit.collider != null && hit.distance <= _distanceFromFloor && RigidBody2D.linearVelocityY <= 0)
-                    _isGrounded = true;
-            }
-
-            IsOnGround = _isGrounded;
-        }
-
-        private void OnDrawGizmos()
-        {
-            if (_drawDebugLines)
-            {
-                CapsuleCollider2D collider2D = GetComponent<CapsuleCollider2D>();
-
-                // Draw floor detection debug lines
-                float dstRaysF = (collider2D.bounds.size.x / (nOfRaysVertical - 1)) - _fRaysTreshold / (nOfRaysVertical - 1);
-                for (var i = 0; i < nOfRaysVertical; i++)
-                {
-                    Vector3 rayPosition = new Vector3((collider2D.bounds.extents.x - (_fRaysTreshold / 2) - (dstRaysF * i)), collider2D.bounds.extents.y);
-
-                    Color rayColor = IsOnGround ? Color.green : Color.red;
-                    Debug.DrawRay(collider2D.bounds.center - rayPosition, Vector2.down * _fRayLenght, rayColor);
-                }
-                Vector3 pos = new Vector3(collider2D.bounds.size.x / 2, collider2D.bounds.size.y / 2 + _distanceFromFloor);
-                Debug.DrawRay(collider2D.bounds.center - pos, Vector2.right * (collider2D.bounds.size.x), Color.magenta);
-
-                if (_fsm != null)
-                {
-                    Handles.Label(new Vector2(transform.position.x, transform.position.y + 1), _fsm.GetCurrentState().ToString());
-                }
-            }
-        }
-
-        public void MoveHorizontally(float horizontalVelocity)
-        {
-            Vector2 velocity = new Vector2(horizontalVelocity, RigidBody2D.linearVelocity.y);
-            RigidBody2D.linearVelocity = velocity;
-        }
-
-        public void MoveVertically(float verticalVelocity)
-        {
-            Vector2 velocity = new Vector2(RigidBody2D.linearVelocity.x, verticalVelocity);
-            RigidBody2D.linearVelocity = velocity;
+            _stateMachine = PlayerFactory.BuildStateMachine(_context);
         }
 
         private void Update()
         {
+            // 1° Checks
+            // 2° Update state machine
+            // 3° Handle physics and other shenanigans
+
             GroundCheck();
 
-            JumpVelocity = (2.0f * JumpHeight) / TimeToPeak;
-            JumpGravity  = (2.0f * JumpHeight) / (TimeToPeak * TimeToPeak);
-            FallGravity  = (2.0f * JumpHeight) / (TimeToFall * TimeToFall);
+            _stateMachine.Update(Time.deltaTime);
 
-            inputDir = _moveAction.ReadValue<float>();
-            if (inputDir > 0) _sprite.flipX = false;
-            else if (inputDir < 0) _sprite.flipX = true;
-
-            _fsm.Update();
+            _rb.linearVelocity = _context.Velocity;
         }
 
-        private void FixedUpdate()
+        private void GroundCheck()
         {
-            _fsm.FixedUpdate();
+            float dstRays = (_collider.bounds.size.x / (config.nOfRaysVertical - 1)) -
+                            config.fRaysThreshold / (config.nOfRaysVertical - 1);
+            bool isGrounded = false;
+
+            for (int i = 0; i < config.nOfRaysVertical; i++)
+            {
+                Vector3 rayPosition =
+                    new Vector3((_collider.bounds.extents.x - (config.fRaysThreshold / 2) - (dstRays * i)),
+                        _collider.bounds.extents.y);
+
+                RaycastHit2D hit = Physics2D.Raycast(_collider.bounds.center - rayPosition, Vector2.down,
+                    config.fRayLenght, config.groundLayer);
+                if (hit.collider is not null && hit.distance <= config.distanceFromFloor && _rb.linearVelocityY <= 0)
+                    isGrounded = true;
+            }
+
+            _context.Grounded = isGrounded;
+        }
+
+        private void OnDrawGizmos()
+        {
+            if (!drawGizmos) return;
+            
+            CapsuleCollider2D capsuleCollider2D = GetComponent<CapsuleCollider2D>();
+
+            // Draw floor detection debug lines
+            float dstRaysF = (capsuleCollider2D.bounds.size.x / (config.nOfRaysVertical - 1)) -
+                             config.fRaysThreshold / (config.nOfRaysVertical - 1);
+            for (int i = 0; i < config.nOfRaysVertical; i++)
+            {
+                Vector3 rayPosition =
+                    new Vector3((capsuleCollider2D.bounds.extents.x - (config.fRaysThreshold / 2) - (dstRaysF * i)),
+                        capsuleCollider2D.bounds.extents.y);
+
+                Color rayColor;
+                if (_context is null) rayColor = Color.turquoise;
+                else rayColor = _context.Grounded ? Color.green : Color.red;
+
+                Debug.DrawRay(capsuleCollider2D.bounds.center - rayPosition, Vector2.down * config.fRayLenght, rayColor);
+            }
+
+            Vector3 pos = new Vector3(capsuleCollider2D.bounds.size.x / 2,
+                capsuleCollider2D.bounds.size.y / 2 + config.distanceFromFloor);
+            Debug.DrawRay(capsuleCollider2D.bounds.center - pos, Vector2.right * (capsuleCollider2D.bounds.size.x), Color.magenta);
         }
 
         private void OnEnable()
         {
-            InputActions.Enable();
+            inputActions.Enable();
         }
 
         private void OnDisable()
         {
-            InputActions.Disable();
+            inputActions.Disable();
         }
     }
 }

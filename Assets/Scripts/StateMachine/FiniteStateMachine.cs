@@ -67,9 +67,11 @@ namespace StateMachine
                     {
                         current.Update(deltaTime);
                         current = current.ActiveChild;
-                    } else
+                    }
+                    else
                     {
                         ChangeState(current, nextStateType);
+                        break;
                     }
                 }
 

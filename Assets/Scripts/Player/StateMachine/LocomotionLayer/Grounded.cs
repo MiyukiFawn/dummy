@@ -1,4 +1,5 @@
 ﻿using StateMachine;
+using System;
 using UnityEngine;
 
 namespace Player.StateMachine.LocomotionLayer
@@ -10,16 +11,12 @@ namespace Player.StateMachine.LocomotionLayer
         {
         }
 
-        public override void OnEnter()
+        public override Type CheckTransition()
         {
-            Context.CoyoteTimeCounter = Context.CoyoteTime;
-            if (Context.JumpBufferCounter > 0) RequestTransition<Airborne>();
-        }
+            if (Context.JumpBufferCounter > 0f) return typeof(Airborne);
+            if (!Context.Grounded) return typeof(Airborne);
 
-        public override void Update(float deltaTime)
-        {
-            if (!Context.Grounded) RequestTransition<Airborne>();
-            if (Context.JumpBufferCounter > 0) RequestTransition<Airborne>();
+            return null;
         }
     }
 }

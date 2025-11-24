@@ -1,4 +1,5 @@
 ﻿using StateMachine;
+using System;
 
 namespace Player.StateMachine.LocomotionLayer
 {
@@ -9,14 +10,16 @@ namespace Player.StateMachine.LocomotionLayer
         {
         }
 
+        public override Type CheckTransition()
+        {
+            if (Context.JumpAction.WasPressedThisFrame() && Context.CoyoteTimeCounter > 0) return typeof(Jump);
+
+            return null;
+        }
+
         public override void OnEnter()
         {
             Context.CurrentFallSpeed = Context.FallGravity;
-        }
-
-        public override void Update(float deltaTime)
-        {
-            if (Context.JumpAction.WasPressedThisFrame() && Context.CoyoteTimeCounter > 0) RequestTransition<Jump>();
         }
     }
 }

@@ -10,6 +10,12 @@ namespace Player.StateMachine.LocomotionLayer
         {
         }
 
+        public override Type CheckTransition()
+        {
+            if (Context.Grounded && Context.CurrentYVelocity <= 0) return typeof(Grounded);
+            return null;
+        }
+
         public override void OnExit()
         {
             Context.CurrentYVelocity = -0.5f;
@@ -17,8 +23,6 @@ namespace Player.StateMachine.LocomotionLayer
 
         public override void Update(float deltaTime)
         {
-            if (Context.Grounded && Context.CurrentYVelocity <= 0) RequestTransition<Grounded>();
-
             Context.CoyoteTimeCounter -= deltaTime;
 
             Context.CurrentYVelocity -= Context.CurrentFallSpeed * deltaTime;
@@ -27,7 +31,7 @@ namespace Player.StateMachine.LocomotionLayer
 
         public override Type GetInitialChild()
         {
-            return Context.CoyoteTimeCounter > 0 && Context.JumpBufferCounter > 0
+            return Context.JumpBufferCounter > 0
                 ? typeof(Jump)
                 : typeof(Fall);
         }

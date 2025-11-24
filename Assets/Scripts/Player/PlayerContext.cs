@@ -22,6 +22,8 @@ namespace Player
         public float JumpGravity => (2.0f * _config.jumpHeight) / Mathf.Pow(_config.timeToPeak, 2);
         public float FallGravity => (2.0f * _config.jumpHeight) / Mathf.Pow(_config.timeToFall, 2);
 
+        public bool JumpRequested { get; set; }
+
         public float CurrentFallSpeed { get; set; } = 0;
         public float MaxFallSpeed => _config.maxFallSpeed;
         public float ReleaseJumpSpeedMultiplier => _config.releaseJumpSpeedMultiplier;

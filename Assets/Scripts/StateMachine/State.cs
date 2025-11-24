@@ -64,7 +64,21 @@ namespace StateMachine
         /// Override this method to implement exit logic.
         /// </summary>
         public virtual void OnExit() {}
-        
+
+        /// <summary>
+        /// Called once per update cycle, before <see cref="Update(float)"/>.
+        /// Allows the state to evaluate whether a transition should occur.
+        /// If this method returns a non-null <see cref="Type"/>,
+        /// the state machine will immediately interrupt the update flow
+        /// and transition to the specified state type.
+        /// Return <c>null</c> to continue normal execution.
+        /// </summary>
+        /// <returns>
+        /// The <see cref="Type"/> of the state to transition to, or <c>null</c>
+        /// if no transition should occur.
+        /// </returns>
+        public virtual Type CheckTransition() => null;
+
         /// <summary>
         /// Called once per update cycle while the state is active.
         /// Override this to implement state-specific update logic.
@@ -77,11 +91,5 @@ namespace StateMachine
         /// Returning <c>null</c> when the state is the last on the chain.
         /// </summary>
         public virtual Type GetInitialChild() => null;
-
-        /// <summary>
-        /// Requests a transition from this state to another sibling state of type <typeparamref name="T"/>.
-        /// </summary>
-        /// <typeparam name="TTarget">The sibling state type to transition to.</typeparam>
-        protected void RequestTransition<TTarget>() where TTarget : T => _machine.ChangeState<TTarget>(this as T);
     }
 }

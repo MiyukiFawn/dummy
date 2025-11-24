@@ -14,6 +14,8 @@ namespace StateMachine
     /// </summary>
     public class FiniteStateMachine<T> where T : State<T>
     {
+        private bool _isTransitioning = false;
+
         /// <summary>
         /// Internal list of state layers managed by the state machine.
         /// </summary>
@@ -60,8 +62,15 @@ namespace StateMachine
 
                 while (current != null)
                 {
-                    current.Update(deltaTime);
-                    current = current.ActiveChild;
+                    Type nextStateType = current.CheckTransition();
+                    if (nextStateType == null)
+                    {
+                        current.Update(deltaTime);
+                        current = current.ActiveChild;
+                    } else
+                    {
+                        ChangeState(current, nextStateType);
+                    }
                 }
 
                 Debug.Log(StateHelper.GetActivePath(layer));
@@ -71,8 +80,8 @@ namespace StateMachine
         /// <summary>
         /// Changes from the current state to a sibling state of the specified type.
         /// </summary>
-        /// <typeparam name="TTarget">The type of the target sibling state to transition to.</typeparam>
-        /// <param name="from">The current state requesting the transition.</param>
+        /// <typeparam name="toState">The type of the target sibling state to transition to.</typeparam>
+        /// <param name="fromState">The current state requesting the transition.</param>
         /// <exception cref="ArgumentNullException">
         /// Thrown when the source state is null.
         /// </exception>
@@ -82,26 +91,29 @@ namespace StateMachine
         /// <exception cref="KeyNotFoundException">
         /// Thrown when the target sibling state does not exist.
         /// </exception>
-        public void ChangeState<TTarget>(T from) where TTarget : State<T>
+        private void ChangeState(T fromState, Type toState)
         {
-            if (from == null) throw new ArgumentNullException(nameof(from), "Requesting state cannot be null");
-            if (from.GetType() == typeof(TTarget))
+            if (_isTransitioning) return;
+            if (fromState == null) throw new ArgumentNullException(nameof(fromState), "Requesting state cannot be null");
+            if (fromState.GetType() == toState)
                 throw new InvalidOperationException(
-                    $"Cannot transition from state '{typeof(TTarget).Name}' to the same state type.");
-            if (from.Parent == null)
+                    $"Cannot transition from state '{toState.Name}' to the same state type.");
+            if (fromState.Parent == null)
                 throw new InvalidOperationException("The root state cannot request a transition.");
-            if (!from.Parent.Children.ContainsKey(typeof(TTarget)))
+            if (!fromState.Parent.Children.ContainsKey(toState))
                 throw new KeyNotFoundException(
-                    $"The state '{typeof(TTarget).Name}' is not a sibling of '{from.GetType().Name}'.");
+                    $"The state '{toState.Name}' is not a sibling of '{fromState.GetType().Name}'.");
 
-            ExitState(from);
+            _isTransitioning = true;
+            ExitState(fromState);
 
-            T to = from.Parent.Children[typeof(TTarget)];
+            T to = fromState.Parent.Children[toState];
             InitializeStateBranch(to);
 
             EnterState(to);
 
-            from.Parent.ActiveChild = to;
+            fromState.Parent.ActiveChild = to;
+            _isTransitioning = false;
         }
 
         /// <summary>

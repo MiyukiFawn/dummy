@@ -15,7 +15,7 @@ namespace Player.StateMachine.LocomotionLayer
         {
             if (Context.JumpAction.WasPressedThisFrame()) Context.JumpBufferCounter = Context.JumpBuffer;
             else Context.JumpBufferCounter -= deltaTime;
-            
+
             Context.CurrentXVelocity = Context.WalkSpeed * Context.MoveAction.ReadValue<float>();
         }
 

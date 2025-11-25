@@ -17,6 +17,8 @@ namespace Player.StateMachine.LocomotionLayer
             Context.CurrentFallSpeed = Context.JumpGravity;
             Context.CoyoteTimeCounter = 0;
             Context.JumpBufferCounter = 0;
+
+            Context.Animator.Play("Jump_Start");
         }
 
         public override Type CheckTransition()

@@ -17,6 +17,10 @@ namespace Player.StateMachine.LocomotionLayer
             else Context.JumpBufferCounter -= deltaTime;
 
             Context.CurrentXVelocity = Context.WalkSpeed * Context.MoveAction.ReadValue<float>();
+
+            float inputDir = Context.MoveAction.ReadValue<float>();
+            if (inputDir > 0) Context.Flipped = false;
+            else if (inputDir < 0) Context.Flipped = true;
         }
 
         public override Type GetInitialChild() => typeof(Grounded);

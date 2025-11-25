@@ -1,4 +1,5 @@
 ﻿using StateMachine;
+using System;
 
 namespace Player.StateMachine.LocomotionLayer
 {
@@ -7,6 +8,18 @@ namespace Player.StateMachine.LocomotionLayer
         public Idle(PlayerContext context, FiniteStateMachine<PlayerBaseState> stateMachine) : base(context,
             stateMachine)
         {
+        }
+
+        public override Type CheckTransition()
+        {
+            if (Context.MoveAction.ReadValue<float>() != 0) return typeof(Walk);
+
+            return null;
+        }
+
+        public override void OnEnter()
+        {
+            Context.Animator.Play("Idle");
         }
     }
 }

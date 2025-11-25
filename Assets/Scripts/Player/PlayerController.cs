@@ -15,20 +15,24 @@ namespace Player
         [SerializeField][Header("Configuration")] private PlayerConfig config;
         [SerializeField] private InputActionAsset inputActions;
 
-        private FiniteStateMachine<PlayerBaseState> _stateMachine;
-
-        private PlayerContext _context;
-
         private Rigidbody2D _rb;
         private CapsuleCollider2D _collider;
+        private SpriteRenderer _sprite;
+        private Animator _animator;
+
+        private PlayerContext _context;
+        private FiniteStateMachine<PlayerBaseState> _stateMachine;
 
         private void Awake()
         {
             _rb = GetComponent<Rigidbody2D>();
             _collider = GetComponent<CapsuleCollider2D>();
+            _sprite = GetComponent<SpriteRenderer>();
+            _animator = GetComponent<Animator>();
 
             _context = new PlayerContext(config)
             {
+                Animator = _animator,
                 MoveAction = inputActions.FindAction("Move"),
                 JumpAction = inputActions.FindAction("Jump")
             };
@@ -47,6 +51,8 @@ namespace Player
             _stateMachine.Update(Time.deltaTime);
 
             _rb.linearVelocity = _context.Velocity;
+
+            _sprite.flipX = _context.Flipped;
         }
 
         private void GroundCheck()
@@ -106,5 +112,10 @@ namespace Player
         {
             inputActions.Disable();
         }
+
+        #region Animation Events
+
+
+        #endregion
     }
 }

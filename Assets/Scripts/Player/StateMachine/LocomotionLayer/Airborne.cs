@@ -16,6 +16,11 @@ namespace Player.StateMachine.LocomotionLayer
             return null;
         }
 
+        public override void OnEnter()
+        {
+            Context.CoyoteTimeCounter = Context.CoyoteTime;
+        }
+
         public override void OnExit()
         {
             Context.CurrentYVelocity = -0.5f;

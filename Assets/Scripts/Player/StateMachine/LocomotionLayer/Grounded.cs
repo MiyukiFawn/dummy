@@ -18,5 +18,10 @@ namespace Player.StateMachine.LocomotionLayer
 
             return null;
         }
+
+        public override Type GetInitialChild()
+        {
+            return typeof(Idle);
+        }
     }
 }

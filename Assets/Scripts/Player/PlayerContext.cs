@@ -12,6 +12,8 @@ namespace Player
             _config = config;
         }
 
+        public bool Flipped { get; set; } = false;
+
         public float WalkSpeed => _config.walkSpeed;
         
         // public float Gravity => (2 * _config.jumpHeight) / (_config.timeToPeak * _config.timeToPeak);
@@ -39,9 +41,10 @@ namespace Player
 
         public InputAction MoveAction { get; set; }
         public InputAction JumpAction { get; set; }
+        public Animator Animator { get; set; }
 
         public float CurrentXVelocity = 0;
         public float CurrentYVelocity = 0;
-        public Vector2 Velocity => new Vector2(CurrentXVelocity, CurrentYVelocity); 
+        public Vector2 Velocity => new Vector2(CurrentXVelocity, CurrentYVelocity);
     }
 }

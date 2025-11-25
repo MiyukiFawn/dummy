@@ -1,5 +1,6 @@
 ﻿using StateMachine;
 using System;
+using UnityEngine;
 
 namespace Player.StateMachine.LocomotionLayer
 {
@@ -20,6 +21,8 @@ namespace Player.StateMachine.LocomotionLayer
         public override void OnEnter()
         {
             Context.CurrentFallSpeed = Context.FallGravity;
+
+            Context.Animator.Play("Fall_Start");
         }
     }
 }

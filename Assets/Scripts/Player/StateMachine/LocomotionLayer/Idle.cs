@@ -12,8 +12,11 @@ namespace Player.StateMachine.LocomotionLayer
 
         public override Type CheckTransition()
         {
-            if (Context.SpinAction.WasPressedThisFrame()) return typeof(Spin);
-            if (Context.MoveAction.ReadValue<float>() != 0) return typeof(Walk);
+            if (!Context.IsCrouching)
+            {
+                if (Context.SpinAction.WasPressedThisFrame()) return typeof(Spin);
+                if (Context.MoveAction.ReadValue<float>() != 0 && Context.CanWalk) return typeof(Walk);   
+            }
 
             return null;
         }

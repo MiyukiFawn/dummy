@@ -14,7 +14,8 @@ namespace Player
                 new Root(context, sm)
                     .AddChild(new Grounded(context, sm)
                         .AddChild(new Idle(context, sm))
-                        .AddChild(new Walk(context, sm)))
+                        .AddChild(new Walk(context, sm))
+                        .AddChild(new Spin(context, sm)))
                     .AddChild(new Airborne(context, sm)
                         .AddChild(new Jump(context, sm))
                         .AddChild(new Fall(context, sm))));

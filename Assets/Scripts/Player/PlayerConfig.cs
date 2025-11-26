@@ -21,9 +21,7 @@ namespace Player
 
         [Header("Ground Detection")]
         public LayerMask groundLayer;
-        [Range(2, 14)] public int nOfRaysVertical = 2;
-        [Range(0.01f, 0.2f)] public float distanceFromFloor = 0.1f;
-        [Range(0, 0.5f)] public float fRaysThreshold;
-        [Range(0.1f, 1)] public float fRayLenght = 0.5f;
+        public Vector2 gCheckBoxSize = Vector2.one;
+        [Min(0.1f)] public float gCheckDistance = 1;
     }
 }

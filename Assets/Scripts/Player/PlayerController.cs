@@ -12,7 +12,10 @@ namespace Player
     public class PlayerController : MonoBehaviour
     {
         [SerializeField] private bool drawGizmos = false;
-        [SerializeField][Header("Configuration")] private PlayerConfig config;
+
+        [SerializeField] [Header("Configuration")]
+        private PlayerConfig config;
+
         [SerializeField] private InputActionAsset inputActions;
 
         private Rigidbody2D _rb;
@@ -34,7 +37,8 @@ namespace Player
             {
                 Animator = _animator,
                 MoveAction = inputActions.FindAction("Move"),
-                JumpAction = inputActions.FindAction("Jump")
+                JumpAction = inputActions.FindAction("Jump"),
+                SpinAction = inputActions.FindAction("Spin"),
             };
 
             _stateMachine = PlayerFactory.BuildStateMachine(_context);
@@ -57,50 +61,17 @@ namespace Player
 
         private void GroundCheck()
         {
-            float dstRays = (_collider.bounds.size.x / (config.nOfRaysVertical - 1)) -
-                            config.fRaysThreshold / (config.nOfRaysVertical - 1);
-            bool isGrounded = false;
+            RaycastHit2D hit = Physics2D.BoxCast(transform.position, config.gCheckBoxSize, 0, -transform.up,
+                config.gCheckDistance, config.groundLayer);
 
-            for (int i = 0; i < config.nOfRaysVertical; i++)
-            {
-                Vector3 rayPosition =
-                    new Vector3((_collider.bounds.extents.x - (config.fRaysThreshold / 2) - (dstRays * i)),
-                        _collider.bounds.extents.y);
-
-                RaycastHit2D hit = Physics2D.Raycast(_collider.bounds.center - rayPosition, Vector2.down,
-                    config.fRayLenght, config.groundLayer);
-                if (hit.collider is not null && hit.distance <= config.distanceFromFloor && _rb.linearVelocityY <= 0)
-                    isGrounded = true;
-            }
-
-            _context.Grounded = isGrounded;
+            _context.Grounded = hit.collider != null;
         }
 
         private void OnDrawGizmos()
         {
             if (!drawGizmos) return;
-            
-            CapsuleCollider2D capsuleCollider2D = GetComponent<CapsuleCollider2D>();
 
-            // Draw floor detection debug lines
-            float dstRaysF = (capsuleCollider2D.bounds.size.x / (config.nOfRaysVertical - 1)) -
-                             config.fRaysThreshold / (config.nOfRaysVertical - 1);
-            for (int i = 0; i < config.nOfRaysVertical; i++)
-            {
-                Vector3 rayPosition =
-                    new Vector3((capsuleCollider2D.bounds.extents.x - (config.fRaysThreshold / 2) - (dstRaysF * i)),
-                        capsuleCollider2D.bounds.extents.y);
-
-                Color rayColor;
-                if (_context is null) rayColor = Color.turquoise;
-                else rayColor = _context.Grounded ? Color.green : Color.red;
-
-                Debug.DrawRay(capsuleCollider2D.bounds.center - rayPosition, Vector2.down * config.fRayLenght, rayColor);
-            }
-
-            Vector3 pos = new Vector3(capsuleCollider2D.bounds.size.x / 2,
-                capsuleCollider2D.bounds.size.y / 2 + config.distanceFromFloor);
-            Debug.DrawRay(capsuleCollider2D.bounds.center - pos, Vector2.right * (capsuleCollider2D.bounds.size.x), Color.magenta);
+            Gizmos.DrawWireCube(transform.position - transform.up * config.gCheckDistance, config.gCheckBoxSize);
         }
 
         private void OnEnable()
@@ -115,7 +86,11 @@ namespace Player
 
         #region Animation Events
 
-
+        private void OnSpinEnd()
+        {
+            _context.SpinEnd = true;
+        }
+        
         #endregion
     }
 }

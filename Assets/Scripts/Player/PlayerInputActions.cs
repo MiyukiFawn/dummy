@@ -109,6 +109,15 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""Spin"",
+                    ""type"": ""Button"",
+                    ""id"": ""747da1d0-fee9-4322-a2e4-7e582824101a"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -155,6 +164,17 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                     ""action"": ""Move"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""dacc7bc1-386d-4944-8b36-62909f217dc8"",
+                    ""path"": ""<Keyboard>/z"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Spin"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -177,6 +197,7 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
         m_Land = asset.FindActionMap("Land", throwIfNotFound: true);
         m_Land_Jump = m_Land.FindAction("Jump", throwIfNotFound: true);
         m_Land_Move = m_Land.FindAction("Move", throwIfNotFound: true);
+        m_Land_Spin = m_Land.FindAction("Spin", throwIfNotFound: true);
     }
 
     ~@PlayerInputActions()
@@ -259,6 +280,7 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
     private List<ILandActions> m_LandActionsCallbackInterfaces = new List<ILandActions>();
     private readonly InputAction m_Land_Jump;
     private readonly InputAction m_Land_Move;
+    private readonly InputAction m_Land_Spin;
     /// <summary>
     /// Provides access to input actions defined in input action map "Land".
     /// </summary>
@@ -278,6 +300,10 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
         /// Provides access to the underlying input action "Land/Move".
         /// </summary>
         public InputAction @Move => m_Wrapper.m_Land_Move;
+        /// <summary>
+        /// Provides access to the underlying input action "Land/Spin".
+        /// </summary>
+        public InputAction @Spin => m_Wrapper.m_Land_Spin;
         /// <summary>
         /// Provides access to the underlying input action map instance.
         /// </summary>
@@ -310,6 +336,9 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
             @Move.started += instance.OnMove;
             @Move.performed += instance.OnMove;
             @Move.canceled += instance.OnMove;
+            @Spin.started += instance.OnSpin;
+            @Spin.performed += instance.OnSpin;
+            @Spin.canceled += instance.OnSpin;
         }
 
         /// <summary>
@@ -327,6 +356,9 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
             @Move.started -= instance.OnMove;
             @Move.performed -= instance.OnMove;
             @Move.canceled -= instance.OnMove;
+            @Spin.started -= instance.OnSpin;
+            @Spin.performed -= instance.OnSpin;
+            @Spin.canceled -= instance.OnSpin;
         }
 
         /// <summary>
@@ -394,5 +426,12 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
         /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
         void OnMove(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "Spin" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnSpin(InputAction.CallbackContext context);
     }
 }

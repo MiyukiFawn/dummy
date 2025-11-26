@@ -41,10 +41,13 @@ namespace Player
 
         public InputAction MoveAction { get; set; }
         public InputAction JumpAction { get; set; }
+        public InputAction SpinAction { get; set; }
         public Animator Animator { get; set; }
 
         public float CurrentXVelocity = 0;
         public float CurrentYVelocity = 0;
         public Vector2 Velocity => new Vector2(CurrentXVelocity, CurrentYVelocity);
+
+        public bool SpinEnd = false;
     }
 }

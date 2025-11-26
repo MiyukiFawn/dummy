@@ -19,6 +19,7 @@ namespace Player.StateMachine.LocomotionLayer
 
         public override void OnEnter()
         {
+            Context.CurrentMovementSpeed = Context.WalkSpeed;
             Context.Animator.Play("Walk");
         }
     }

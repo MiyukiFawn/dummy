@@ -79,6 +79,23 @@ namespace StateMachine
             }
         }
 
+        public bool IsStateActive(Type stateType)
+        {
+            foreach (StateLayer<T> layer in _layers)
+            {
+                if (!layer.IsActive) continue;
+                T current = layer.Root;
+
+                while (current != null)
+                {
+                    if (current.GetType() == stateType) return true;
+
+                    current = current.ActiveChild;
+                }
+            }
+            return false;
+        }
+
         /// <summary>
         /// Changes from the current state to a sibling state of the specified type.
         /// </summary>

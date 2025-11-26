@@ -79,6 +79,8 @@ namespace StateMachine
         /// </returns>
         public virtual Type CheckTransition() => null;
 
+        public bool IsStateActive(Type stateType) => _machine.IsStateActive(stateType);
+
         /// <summary>
         /// Called once per update cycle while the state is active.
         /// Override this to implement state-specific update logic.

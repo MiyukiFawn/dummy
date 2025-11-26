@@ -34,7 +34,9 @@ namespace Player
             {
                 Animator = _animator,
                 MoveAction = inputActions.FindAction("Move"),
-                JumpAction = inputActions.FindAction("Jump")
+                JumpAction = inputActions.FindAction("Jump"),
+                CrouchAction = inputActions.FindAction("Crouch"),
+                StandUpAction = inputActions.FindAction("Stand Up")
             };
 
             _stateMachine = PlayerFactory.BuildStateMachine(_context);
@@ -115,6 +117,15 @@ namespace Player
 
         #region Animation Events
 
+        private void OnCrouchEnd()
+        {
+            _context.CanWalk = true;
+        }
+
+        private void OnStandUpEnd()
+        {
+            _context.CanWalk = true;
+        }
 
         #endregion
     }

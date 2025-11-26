@@ -2279,7 +2279,7 @@ MonoBehaviour:
     maxJumpCount: 1
     jumpHeight: 3
     timeToPeak: 0.7
-    timeToFall: 0.5
+    timeToFall: 0.3
     maxFallSpeed: 50
     releaseJumpSpeedMultiplier: 4
     coyoteTime: 0.2

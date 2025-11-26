@@ -12,10 +12,7 @@ namespace Player
     public class PlayerController : MonoBehaviour
     {
         [SerializeField] private bool drawGizmos = false;
-
-        [SerializeField] [Header("Configuration")]
-        private PlayerConfig config;
-
+        [SerializeField][Header("Configuration")] private PlayerConfig config;
         [SerializeField] private InputActionAsset inputActions;
 
         private Rigidbody2D _rb;
@@ -38,6 +35,8 @@ namespace Player
                 Animator = _animator,
                 MoveAction = inputActions.FindAction("Move"),
                 JumpAction = inputActions.FindAction("Jump"),
+                CrouchAction = inputActions.FindAction("Crouch"),
+                StandUpAction = inputActions.FindAction("Stand Up"),
                 SpinAction = inputActions.FindAction("Spin"),
             };
 
@@ -91,6 +90,19 @@ namespace Player
             _context.SpinEnd = true;
         }
         
+        private void OnCrouchEnd()
+        {
+            _context.CanWalk = true;
+            _context.IsCrouching = false;
+        }
+
+        private void OnStandUpEnd()
+        {
+            _context.CanWalk = true;
+            _context.CanJump = true;
+            _context.IsCrouching = false;
+        }
+
         #endregion
     }
 }

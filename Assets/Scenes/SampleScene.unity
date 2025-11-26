@@ -2275,11 +2275,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerController
   drawGizmos: 1
   config:
-    walkSpeed: 5
+    walkSpeed: 3
+    crawlSpeed: 1
     maxJumpCount: 1
     jumpHeight: 3
     timeToPeak: 0.7
-    timeToFall: 0.5
+    timeToFall: 0.3
     maxFallSpeed: 50
     releaseJumpSpeedMultiplier: 4
     coyoteTime: 0.2

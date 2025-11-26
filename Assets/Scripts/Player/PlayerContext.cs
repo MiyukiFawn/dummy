@@ -13,9 +13,14 @@ namespace Player
         }
 
         public bool Flipped { get; set; } = false;
-
-        public float WalkSpeed => _config.walkSpeed;
+        public bool CanJump { get; set; } = true;
+        public bool CanWalk { get; set; } = true;
+        public bool IsCrouching { get; set; } = false;
         
+        public float CrawlSpeed => _config.crawlSpeed;
+        public float WalkSpeed => _config.walkSpeed;
+        public float CurrentMovementSpeed { get; set; } = 0;
+
         // public float Gravity => (2 * _config.jumpHeight) / (_config.timeToPeak * _config.timeToPeak);
         // public float InitialJumpVelocity => (2 * _config.jumpHeight) / _config.timeToPeak;
         // public float MaxFallSpeed => _config.maxFallSpeed;
@@ -42,6 +47,9 @@ namespace Player
         public InputAction MoveAction { get; set; }
         public InputAction JumpAction { get; set; }
         public InputAction SpinAction { get; set; }
+        public InputAction CrouchAction { get; set; }
+        public InputAction StandUpAction { get; set; }
+
         public Animator Animator { get; set; }
 
         public float CurrentXVelocity = 0;

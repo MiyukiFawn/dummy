@@ -11,6 +11,7 @@ namespace Player.StateMachine.LocomotionLayer
 
         public override void OnEnter()
         {
+            Context.CanWalk = false;
             Context.Animator.Play("Spin");
         }
 
@@ -24,6 +25,7 @@ namespace Player.StateMachine.LocomotionLayer
         public override void OnExit()
         {
             Context.SpinEnd = false;
+            Context.CanWalk = true;
         }
     }
 }

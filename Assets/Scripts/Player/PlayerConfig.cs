@@ -8,7 +8,10 @@ namespace Player
     {
         [Header("Movement")]
         public float walkSpeed = 5;
+        public float runSpeed = 10;
         public float crawlSpeed = 2;
+        [Min(0)] public float timeToRun = 3;
+        [Min(0)] public float timeToStop = 1;
         
         [Header("Jump")]
         [Min(1)]          public int   maxJumpCount = 1;

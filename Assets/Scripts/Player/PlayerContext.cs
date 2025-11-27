@@ -12,6 +12,8 @@ namespace Player
             _config = config;
         }
 
+        public bool IgnorePlayerInput { get; set; } = false;
+
         public bool Flipped { get; set; } = false;
         public bool CanJump { get; set; } = true;
         public bool CanWalk { get; set; } = true;
@@ -19,11 +21,16 @@ namespace Player
         
         public float CrawlSpeed => _config.crawlSpeed;
         public float WalkSpeed => _config.walkSpeed;
+        public float RunSpeed => _config.runSpeed;
         public float CurrentMovementSpeed { get; set; } = 0;
 
-        // public float Gravity => (2 * _config.jumpHeight) / (_config.timeToPeak * _config.timeToPeak);
-        // public float InitialJumpVelocity => (2 * _config.jumpHeight) / _config.timeToPeak;
-        // public float MaxFallSpeed => _config.maxFallSpeed;
+        public float TimeToRun => _config.timeToRun;
+        public float TimeToRunCounter { get; set; } = 0;
+
+        public float TimeToStop => _config.timeToStop;
+        public float TimeToStopCounter { get; set; } = 0;
+
+        public float LastInputDirection { get; set; } = 0;
 
         public float JumpVelocity => (2.0f * _config.jumpHeight) / _config.timeToPeak;
         public float JumpGravity => (2.0f * _config.jumpHeight) / Mathf.Pow(_config.timeToPeak, 2);

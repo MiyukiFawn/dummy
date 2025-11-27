@@ -23,6 +23,7 @@ namespace Player.StateMachine.LocomotionLayer
 
         public override void OnEnter()
         {
+            Context.TimeToRunCounter = 0;
             Context.CurrentMovementSpeed = Context.WalkSpeed;
             if (!IsStateActive(typeof(Crouch))) Context.Animator.Play("Idle");
         }

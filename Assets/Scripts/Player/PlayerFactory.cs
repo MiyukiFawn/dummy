@@ -16,6 +16,8 @@ namespace Player
                         .AddChild(new Standing(context, sm)
                             .AddChild(new Idle(context, sm))
                             .AddChild(new Walk(context, sm))
+                            .AddChild(new Run(context, sm))
+                            .AddChild(new RunStop(context, sm))
                             .AddChild(new Spin(context, sm))
                         )
                         .AddChild(new Crouch(context, sm)

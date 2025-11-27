@@ -13,6 +13,11 @@ namespace Player.StateMachine.LocomotionLayer
 
         public override Type GetInitialChild()
         {
+            if (Context.MoveAction.ReadValue<float>() != 0)
+            {
+                if (Context.TimeToRunCounter >= Context.TimeToRun) return typeof(Run);
+                else if (Context.CanWalk) return typeof(Walk);
+            }
             return typeof(Idle);
         }
 

@@ -1,6 +1,8 @@
 ﻿using StateMachine;
 using System;
 using UnityEngine;
+using static UnityEngine.Rendering.STP;
+using static UnityEngine.RuleTile.TilingRuleOutput;
 
 namespace Player.StateMachine.LocomotionLayer
 {
@@ -14,6 +16,7 @@ namespace Player.StateMachine.LocomotionLayer
         public override Type CheckTransition()
         {
             if (Context.JumpAction.WasPressedThisFrame() && Context.CoyoteTimeCounter > 0) return typeof(Jump);
+            if (Context.IsLedgeGrabbing) return typeof(LedgeGrab);
 
             return null;
         }

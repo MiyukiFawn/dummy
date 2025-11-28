@@ -23,6 +23,11 @@ namespace Player
         [Range(0.01f, 1)] public float coyoteTime = 0.2f;
         [Range(0.01f, 1)] public float jumpBuffer = 0.2f;
 
+        [Header("Ledge Grab")]
+        public Vector2 grabPositionOffsed = Vector2.zero;
+        public Vector2 ledgeGrabRayOrigin = Vector2.zero;
+        public float ledgeGrabRayDistance = 1;
+
         [Header("Ground Detection")]
         public LayerMask groundLayer;
         public Vector2 gCheckBoxSize = Vector2.one;

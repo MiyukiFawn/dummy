@@ -28,6 +28,7 @@ namespace Player
                     .AddChild(new Airborne(context, sm)
                         .AddChild(new Jump(context, sm))
                         .AddChild(new Fall(context, sm))
+                        .AddChild(new LedgeGrab(context, sm))
                     )
             );
 

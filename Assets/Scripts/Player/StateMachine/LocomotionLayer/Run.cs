@@ -24,6 +24,7 @@ namespace Player.StateMachine.LocomotionLayer
 
         public override void OnEnter()
         {
+            Context.CanCrouch = false;
             Context.TimeToRunCounter = Context.TimeToRun;
             Context.CurrentMovementSpeed = Context.RunSpeed;
             Context.Animator.Play("Run");

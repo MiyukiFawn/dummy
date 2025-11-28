@@ -23,7 +23,7 @@ namespace Player.StateMachine.LocomotionLayer
 
         public override Type CheckTransition()
         {
-            if (Context.CrouchAction.WasPressedThisFrame() && !Context.IsCrouching) return typeof(Crouch);
+            if (Context.CrouchAction.WasPressedThisFrame() && !Context.IsCrouching && Context.CanCrouch) return typeof(Crouch);
             return null;
         }
 

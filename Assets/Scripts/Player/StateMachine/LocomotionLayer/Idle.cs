@@ -25,6 +25,7 @@ namespace Player.StateMachine.LocomotionLayer
         {
             Context.TimeToRunCounter = 0;
             Context.CurrentMovementSpeed = Context.WalkSpeed;
+            Context.CanCrouch = true;
             if (!IsStateActive(typeof(Crouch))) Context.Animator.Play("Idle");
         }
     }

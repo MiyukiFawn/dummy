@@ -26,6 +26,7 @@ namespace Player.StateMachine.LocomotionLayer
         public override void OnEnter()
         {
             Context.CurrentMovementSpeed = Context.WalkSpeed;
+            Context.CanCrouch = true;
             Context.Animator.Play("Walk");
         }
     }

@@ -17,6 +17,7 @@ namespace Player
         public bool Flipped { get; set; } = false;
         public bool CanJump { get; set; } = true;
         public bool CanWalk { get; set; } = true;
+        public bool CanCrouch { get; set; } = true;
         public bool IsCrouching { get; set; } = false;
         
         public float CrawlSpeed => _config.crawlSpeed;
@@ -50,6 +51,8 @@ namespace Player
         public float JumpBufferCounter { get; set; }
         
         public bool Grounded = false;
+
+        public bool IsLedgeGrabbing = false;
 
         public InputAction MoveAction { get; set; }
         public InputAction JumpAction { get; set; }

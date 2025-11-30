@@ -19,7 +19,7 @@ namespace Player
         public bool CanWalk { get; set; } = true;
         public bool CanCrouch { get; set; } = true;
         public bool IsCrouching { get; set; } = false;
-        
+
         public float CrawlSpeed => _config.crawlSpeed;
         public float WalkSpeed => _config.walkSpeed;
         public float RunSpeed => _config.runSpeed;
@@ -46,14 +46,16 @@ namespace Player
 
         public float CoyoteTime => _config.coyoteTime;
         public float CoyoteTimeCounter { get; set; }
-        
+
         public float JumpBuffer => _config.jumpBuffer;
         public float JumpBufferCounter { get; set; }
+
+        public bool IsTouchingGround { get; set; } = false;
+        public bool IsTouchingWall { get; set; } = false;
+        public bool IsTouchingCeiling { get; set; } = false;
+        public bool IsOnLedge { get; set;  } = false;
+        public Vector2 LedgePosition { get; set; } = Vector2.one;
         
-        public bool Grounded = false;
-
-        public bool IsLedgeGrabbing = false;
-
         public InputAction MoveAction { get; set; }
         public InputAction JumpAction { get; set; }
         public InputAction SpinAction { get; set; }

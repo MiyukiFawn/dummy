@@ -13,18 +13,28 @@ namespace Player.StateMachine.LocomotionLayer
         {
         }
 
+        private const float LedgeGrabTimer = 0.2f;
+        private float _ledgeGrabTimerCounter = 0;
+
         public override Type CheckTransition()
         {
             if (Context.JumpAction.WasPressedThisFrame() && Context.CoyoteTimeCounter > 0) return typeof(Jump);
-            if (Context.IsLedgeGrabbing) return typeof(LedgeGrab);
+            if (Context.IsOnLedge && _ledgeGrabTimerCounter > LedgeGrabTimer) return typeof(LedgeGrab);
 
             return null;
         }
 
+        public override void Update(float deltaTime)
+        {
+            _ledgeGrabTimerCounter += deltaTime;
+        }
+
         public override void OnEnter()
         {
+            if (IsStateActive(typeof(LedgeGrab))) _ledgeGrabTimerCounter = 0;
+            else _ledgeGrabTimerCounter = LedgeGrabTimer;
+            
             Context.CurrentFallSpeed = Context.FallGravity;
-
             Context.Animator.Play("Fall_Start");
         }
     }

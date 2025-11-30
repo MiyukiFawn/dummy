@@ -12,7 +12,7 @@ namespace Player.StateMachine.LocomotionLayer
 
         public override Type CheckTransition()
         {
-            if (Context.Grounded && Context.CurrentYVelocity <= 0) return typeof(Grounded);
+            if (Context.IsTouchingGround && Context.CurrentYVelocity <= 0) return typeof(Grounded);
             return null;
         }
 

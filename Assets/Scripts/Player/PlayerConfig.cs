@@ -1,4 +1,5 @@
 ﻿using System;
+using TMPro.EditorUtilities;
 using UnityEngine;
 
 namespace Player
@@ -6,6 +7,9 @@ namespace Player
     [Serializable]
     public class PlayerConfig
     {
+        [Header("General")]
+        public LayerMask groundLayer;
+        
         [Header("Movement")]
         public float walkSpeed = 5;
         public float runSpeed = 10;
@@ -22,15 +26,23 @@ namespace Player
         [Min(1)]          public float releaseJumpSpeedMultiplier = 1;
         [Range(0.01f, 1)] public float coyoteTime = 0.2f;
         [Range(0.01f, 1)] public float jumpBuffer = 0.2f;
-
+        
         [Header("Ledge Grab")]
-        public Vector2 grabPositionOffsed = Vector2.zero;
-        public Vector2 ledgeGrabRayOrigin = Vector2.zero;
-        public float ledgeGrabRayDistance = 1;
+        public Vector2 ledgeRayVerticalOrigin = Vector2.zero;
+        public float ledgeRayVerticalDistance = 1f; 
+        public float ledgeRayHorizontalDistance = 1f;
+        public Vector2 ledgeHoldPosition = Vector2.zero;
 
         [Header("Ground Detection")]
-        public LayerMask groundLayer;
         public Vector2 gCheckBoxSize = Vector2.one;
         [Min(0.1f)] public float gCheckDistance = 1;
+        
+        [Header("Wall Detection")]
+        public Vector2 wCheckBoxSize = Vector2.one;
+        [Min(0.1f)] public float wCheckDistance = 1;
+        
+        [Header("Ceiling Detection")]
+        public Vector2 ceCheckBoxSize = Vector2.one;
+        [Min(0.1f)] public float ceCheckDistance = 1;
     }
 }

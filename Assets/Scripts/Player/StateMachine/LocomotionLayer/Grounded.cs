@@ -14,7 +14,7 @@ namespace Player.StateMachine.LocomotionLayer
         public override Type CheckTransition()
         {
             if (Context.JumpBufferCounter > 0f && Context.CanJump) return typeof(Airborne);
-            if (!Context.Grounded) return typeof(Airborne);
+            if (!Context.IsTouchingGround) return typeof(Airborne);
 
             return null;
         }

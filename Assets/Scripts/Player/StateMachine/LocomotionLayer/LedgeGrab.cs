@@ -21,6 +21,7 @@ namespace Player.StateMachine.LocomotionLayer
 
         public override void OnEnter()
         {
+            Context.IgnorePlayerInput = true;
             Context.CanWalk = false;
             Context.CurrentFallSpeed = 0;
             Context.CurrentYVelocity = 0;
@@ -30,6 +31,7 @@ namespace Player.StateMachine.LocomotionLayer
 
         public override void OnExit()
         {
+            Context.IgnorePlayerInput = false;
             Context.CanWalk = true;
         }
     }

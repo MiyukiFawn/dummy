@@ -19,7 +19,7 @@ namespace Player.StateMachine.LocomotionLayer
         public override Type CheckTransition()
         {
             if (Context.JumpAction.WasPressedThisFrame() && Context.CoyoteTimeCounter > 0) return typeof(Jump);
-            if (Context.IsOnLedge && _ledgeGrabTimerCounter > LedgeGrabTimer) return typeof(LedgeGrab);
+            if (Context.IsLedgeAvaliable && Context.IsOnLedge && _ledgeGrabTimerCounter > LedgeGrabTimer) return typeof(LedgeGrab);
 
             return null;
         }

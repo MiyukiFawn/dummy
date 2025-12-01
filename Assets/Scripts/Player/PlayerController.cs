@@ -21,17 +21,20 @@ namespace Player
         [SerializeField] private InputActionAsset inputActions;
 
         private Rigidbody2D _rb;
-        private CapsuleCollider2D _collider;
+        private BoxCollider2D _collider;
         private SpriteRenderer _sprite;
         private Animator _animator;
 
         private PlayerContext _context;
         private FiniteStateMachine<PlayerBaseState> _stateMachine;
 
+        private Vector2 _originalColliderSize;
+        private Vector2 _originalColliderOffset;
+
         private void Awake()
         {
             _rb = GetComponent<Rigidbody2D>();
-            _collider = GetComponent<CapsuleCollider2D>();
+            _collider = GetComponent<BoxCollider2D>();
             _sprite = GetComponent<SpriteRenderer>();
             _animator = GetComponent<Animator>();
 
@@ -45,7 +48,16 @@ namespace Player
                 SpinAction = inputActions.FindAction("Spin"),
             };
 
+            _context.CrouchEnter += OnCrouchEnter;
+            _context.CrouchExit += OnCrouchExit;
+
             _stateMachine = PlayerFactory.BuildStateMachine(_context);
+        }
+
+        private void OnDestroy()
+        {
+            _context.CrouchEnter -= OnCrouchEnter;
+            _context.CrouchExit -= OnCrouchExit;
         }
 
         private void Update()
@@ -99,8 +111,21 @@ namespace Player
             if (_context.IsTouchingGround) return;
             if (_context.IsTouchingCeiling) return;
             if (!_context.IsTouchingWall) return;
-            // if (!_stateMachine.IsStateActive(typeof(Fall))) return;
-            
+            if (!_stateMachine.IsStateActive(typeof(Fall))) return;
+
+            float ledgeCheckBoxPositionX = _context.Flipped ? -config.ledgeCheckBoxPosition.x : config.ledgeCheckBoxPosition.x;
+            Vector3 ledgeCheckBoxPosition = new Vector3(ledgeCheckBoxPositionX, config.ledgeCheckBoxPosition.y);
+
+            RaycastHit2D wallHit = Physics2D.BoxCast(
+                transform.position + ledgeCheckBoxPosition,
+                config.ledgeCheckBoxSize,
+                0,
+                Vector2.zero,
+                config.groundLayer);
+
+            _context.IsLedgeAvaliable = wallHit.collider is null;
+            if (!_context.IsLedgeAvaliable) return;
+
             float ledgeRayVerticalOriginX = _context.Flipped ? -config.ledgeRayVerticalOrigin.x : config.ledgeRayVerticalOrigin.x;
             Vector3 ledgeRayVerticalOrigin = new Vector3(ledgeRayVerticalOriginX, config.ledgeRayVerticalOrigin.y);
             
@@ -153,18 +178,28 @@ namespace Player
             
             Vector3 ledgeRayHorizontalDirection = isFlipped ? -transform.right  : transform.right;
             
+            float ledgeCheckBoxPositionX = isFlipped ? -config.ledgeCheckBoxPosition.x : config.ledgeCheckBoxPosition.x;
+            Vector3 ledgeCheckBoxPosition = new Vector3(ledgeCheckBoxPositionX, config.ledgeCheckBoxPosition.y);
+
             Gizmos.color = Color.green;
             Gizmos.DrawRay(transform.position + ledgeRayVerticalOrigin, Vector2.down * config.ledgeRayVerticalDistance);
             
             Gizmos.color = Color.red;
             Gizmos.DrawRay(transform.position, ledgeRayHorizontalDirection * config.ledgeRayHorizontalDistance);
-            
+
+            Gizmos.color = Color.yellow;
+            if (_context?.IsLedgeAvaliable ?? true) Gizmos.DrawWireCube(transform.position + ledgeCheckBoxPosition, config.ledgeCheckBoxSize);
+            else Gizmos.DrawCube(transform.position + ledgeCheckBoxPosition, config.ledgeCheckBoxSize);
+
             // Hand Position
             float ledgeHoldPositionX = isFlipped ? -config.ledgeHoldPosition.x : config.ledgeHoldPosition.x;
             Vector3 ledgeHoldPosition = new Vector2(ledgeHoldPositionX, config.ledgeHoldPosition.y);
             
             Gizmos.color = Color.blue;
-            Gizmos.DrawWireSphere( transform.position + ledgeHoldPosition, 0.2f);
+            Gizmos.DrawWireSphere(transform.position + ledgeHoldPosition, 0.2f);
+
+            Gizmos.color = Color.limeGreen;
+            Gizmos.DrawWireCube(transform.position + new Vector3(config.crawlHitboxOffset.x, config.crawlHitboxOffset.y), config.crawlHitboxSize);
         }
 
         private void OnEnable()
@@ -177,6 +212,32 @@ namespace Player
             inputActions.Disable();
         }
 
+        #region Events Callbacks
+
+        private void OnCrouchEnter()
+        {
+            _context.CanWalk = true;
+            _context.IsCrouching = false;
+
+            _originalColliderSize = _collider.size;
+            _originalColliderOffset = _collider.offset;
+
+            _collider.size = config.crawlHitboxSize;
+            _collider.offset = config.crawlHitboxOffset;
+        }
+
+        private void OnCrouchExit()
+        {
+            _context.CanWalk = true;
+            _context.CanJump = true;
+            _context.IsCrouching = false;
+
+            _collider.size = _originalColliderSize;
+            _collider.offset = _originalColliderOffset;
+        }
+
+        #endregion
+
         #region Animation Events
 
         private void OnSpinEnd()
@@ -186,15 +247,10 @@ namespace Player
 
         private void OnCrouchEnd()
         {
-            _context.CanWalk = true;
-            _context.IsCrouching = false;
         }
 
         private void OnStandUpEnd()
         {
-            _context.CanWalk = true;
-            _context.CanJump = true;
-            _context.IsCrouching = false;
         }
 
         private void OnGrabLedge()

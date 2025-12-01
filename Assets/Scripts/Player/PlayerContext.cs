@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using UnityEngine.InputSystem;
 
 namespace Player
@@ -19,6 +20,7 @@ namespace Player
         public bool CanWalk { get; set; } = true;
         public bool CanCrouch { get; set; } = true;
         public bool IsCrouching { get; set; } = false;
+        public bool IsLedgeAvaliable { get; set; } = false;
 
         public float CrawlSpeed => _config.crawlSpeed;
         public float WalkSpeed => _config.walkSpeed;
@@ -69,5 +71,15 @@ namespace Player
         public Vector2 Velocity => new Vector2(CurrentXVelocity, CurrentYVelocity);
 
         public bool SpinEnd = false;
+
+        #region Events
+
+        public event Action CrouchEnter;
+        public void OnCrouchEnter() => CrouchEnter?.Invoke();
+
+        public event Action CrouchExit;
+        public void OnCrouchExit() => CrouchExit?.Invoke();
+
+        #endregion
     }
 }

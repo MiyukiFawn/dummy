@@ -24,6 +24,8 @@ namespace Player.StateMachine.LocomotionLayer
 
         public override void OnEnter()
         {
+            Context.OnCrouchEnter();
+
             Context.IsCrouching = true;
             Context.CurrentMovementSpeed = Context.CrawlSpeed;
             
@@ -34,6 +36,8 @@ namespace Player.StateMachine.LocomotionLayer
 
         public override void OnExit()
         {
+            Context.OnCrouchExit();
+
             Context.IsCrouching = true;
             Context.CurrentMovementSpeed = Context.WalkSpeed;
         }

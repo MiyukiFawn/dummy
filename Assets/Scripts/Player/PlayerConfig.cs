@@ -14,6 +14,8 @@ namespace Player
         public float walkSpeed = 5;
         public float runSpeed = 10;
         public float crawlSpeed = 2;
+        public Vector2 crawlHitboxSize = Vector2.one;
+        public Vector2 crawlHitboxOffset = Vector2.zero;
         [Min(0)] public float timeToRun = 3;
         [Min(0)] public float timeToStop = 1;
         
@@ -26,8 +28,10 @@ namespace Player
         [Min(1)]          public float releaseJumpSpeedMultiplier = 1;
         [Range(0.01f, 1)] public float coyoteTime = 0.2f;
         [Range(0.01f, 1)] public float jumpBuffer = 0.2f;
-        
+
         [Header("Ledge Grab")]
+        public Vector2 ledgeCheckBoxPosition = Vector2.one;
+        public Vector2 ledgeCheckBoxSize = Vector2.one;
         public Vector2 ledgeRayVerticalOrigin = Vector2.zero;
         public float ledgeRayVerticalDistance = 1f; 
         public float ledgeRayHorizontalDistance = 1f;

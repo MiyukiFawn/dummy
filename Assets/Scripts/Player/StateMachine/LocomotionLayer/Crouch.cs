@@ -18,15 +18,12 @@ namespace Player.StateMachine.LocomotionLayer
 
         public override Type CheckTransition()
         {
-            if (Context.StandUpAction.WasPressedThisFrame() && !Context.IsCrouching) return typeof(Standing);
+            if (Context.StandUpAction.WasPressedThisFrame()) return typeof(Standing);
             return null;
         }
 
         public override void OnEnter()
         {
-            Context.OnCrouchEnter();
-
-            Context.IsCrouching = true;
             Context.CurrentMovementSpeed = Context.CrawlSpeed;
             
             Context.CanJump = false;
@@ -36,9 +33,6 @@ namespace Player.StateMachine.LocomotionLayer
 
         public override void OnExit()
         {
-            Context.OnCrouchExit();
-
-            Context.IsCrouching = true;
             Context.CurrentMovementSpeed = Context.WalkSpeed;
         }
     }

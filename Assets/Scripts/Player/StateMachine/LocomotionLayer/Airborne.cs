@@ -18,7 +18,6 @@ namespace Player.StateMachine.LocomotionLayer
 
         public override void OnEnter()
         {
-            Context.IsCrouching = false;
             Context.CanJump = true;
             Context.CanWalk = true;
             Context.CoyoteTimeCounter = Context.CoyoteTime;

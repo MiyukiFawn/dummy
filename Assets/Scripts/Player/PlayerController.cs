@@ -48,17 +48,9 @@ namespace Player
                 SpinAction = inputActions.FindAction("Spin"),
             };
 
-            _context.CrouchEnter += OnCrouchEnter;
-            _context.CrouchExit += OnCrouchExit;
-
             _stateMachine = PlayerFactory.BuildStateMachine(_context);
         }
 
-        private void OnDestroy()
-        {
-            _context.CrouchEnter -= OnCrouchEnter;
-            _context.CrouchExit -= OnCrouchExit;
-        }
 
         private void Update()
         {
@@ -212,32 +204,6 @@ namespace Player
             inputActions.Disable();
         }
 
-        #region Events Callbacks
-
-        private void OnCrouchEnter()
-        {
-            _context.CanWalk = true;
-            _context.IsCrouching = false;
-
-            _originalColliderSize = _collider.size;
-            _originalColliderOffset = _collider.offset;
-
-            _collider.size = config.crawlHitboxSize;
-            _collider.offset = config.crawlHitboxOffset;
-        }
-
-        private void OnCrouchExit()
-        {
-            _context.CanWalk = true;
-            _context.CanJump = true;
-            _context.IsCrouching = false;
-
-            _collider.size = _originalColliderSize;
-            _collider.offset = _originalColliderOffset;
-        }
-
-        #endregion
-
         #region Animation Events
 
         private void OnSpinEnd()
@@ -247,10 +213,22 @@ namespace Player
 
         private void OnCrouchEnd()
         {
+            _context.CanWalk = true;
+
+            _originalColliderSize = _collider.size;
+            _originalColliderOffset = _collider.offset;
+
+            _collider.size = config.crawlHitboxSize;
+            _collider.offset = config.crawlHitboxOffset;
         }
 
         private void OnStandUpEnd()
         {
+            _context.CanWalk = true;
+            _context.CanJump = true;
+
+            _collider.size = _originalColliderSize;
+            _collider.offset = _originalColliderOffset;
         }
 
         private void OnGrabLedge()

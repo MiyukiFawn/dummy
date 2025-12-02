@@ -19,7 +19,6 @@ namespace Player
         public bool CanJump { get; set; } = true;
         public bool CanWalk { get; set; } = true;
         public bool CanCrouch { get; set; } = true;
-        public bool IsCrouching { get; set; } = false;
         public bool IsLedgeAvaliable { get; set; } = false;
 
         public float CrawlSpeed => _config.crawlSpeed;
@@ -71,15 +70,5 @@ namespace Player
         public Vector2 Velocity => new Vector2(CurrentXVelocity, CurrentYVelocity);
 
         public bool SpinEnd = false;
-
-        #region Events
-
-        public event Action CrouchEnter;
-        public void OnCrouchEnter() => CrouchEnter?.Invoke();
-
-        public event Action CrouchExit;
-        public void OnCrouchExit() => CrouchExit?.Invoke();
-
-        #endregion
     }
 }

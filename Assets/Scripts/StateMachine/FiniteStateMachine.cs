@@ -16,6 +16,9 @@ namespace StateMachine
     {
         private bool _isTransitioning = false;
 
+        public event Action<Type> StateEnter;
+        public event Action<Type> StateExit;
+
         /// <summary>
         /// Internal list of state layers managed by the state machine.
         /// </summary>
@@ -170,12 +173,13 @@ namespace StateMachine
         /// state and then on each active child state recursively until the leaf state.
         /// </summary>
         /// <param name="root">The root state from which the enter sequence begins.</param>
-        private static void EnterState(T root)
+        private void EnterState(T root)
         {
             T current = root;
             while (current != null)
             {
                 current.OnEnter();
+                StateEnter?.Invoke(current.GetType());
                 current = current.ActiveChild;
             }
         }
@@ -185,7 +189,7 @@ namespace StateMachine
         /// state and each of its ancestors, stopping before reaching the root's parent state.
         /// </summary>
         /// <param name="root">The root state from which the exit sequence begins.</param>
-        private static void ExitState(T root)
+        private void ExitState(T root)
         {
             T leaf = StateHelper.GetStateLeaf(root) as T;
 
@@ -193,6 +197,7 @@ namespace StateMachine
             while (current != root.Parent)
             {
                 current.OnExit();
+                StateExit?.Invoke(current.GetType());
                 current = current.Parent;
             }
         }

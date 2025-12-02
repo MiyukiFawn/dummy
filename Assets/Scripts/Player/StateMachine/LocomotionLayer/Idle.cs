@@ -12,7 +12,7 @@ namespace Player.StateMachine.LocomotionLayer
 
         public override Type CheckTransition()
         {
-            if (!Context.IsCrouching)
+            if (!SM.IsStateActive(typeof(Crouch)))
             {
                 if (Context.SpinAction.WasPressedThisFrame()) return typeof(Spin);
                 if (Context.MoveAction.ReadValue<float>() != 0 && Context.CanWalk) return typeof(Walk);   
@@ -26,7 +26,7 @@ namespace Player.StateMachine.LocomotionLayer
             Context.TimeToRunCounter = 0;
             Context.CurrentMovementSpeed = Context.WalkSpeed;
             Context.CanCrouch = true;
-            if (!IsStateActive(typeof(Crouch))) Context.Animator.Play("Idle");
+            if (!SM.IsStateActive(typeof(Crouch))) Context.Animator.Play("Idle");
         }
     }
 }

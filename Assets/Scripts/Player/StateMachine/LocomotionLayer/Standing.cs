@@ -13,7 +13,7 @@ namespace Player.StateMachine.LocomotionLayer
 
         public override Type GetInitialChild()
         {
-            if (Context.MoveAction.ReadValue<float>() != 0)
+            if (Context.MoveAction.ReadValue<float>() != 0 && !SM.IsStateActive(typeof(Crouch)))
             {
                 if (Context.TimeToRunCounter >= Context.TimeToRun) return typeof(Run);
                 else if (Context.CanWalk) return typeof(Walk);
@@ -23,13 +23,13 @@ namespace Player.StateMachine.LocomotionLayer
 
         public override Type CheckTransition()
         {
-            if (Context.CrouchAction.WasPressedThisFrame() && !Context.IsCrouching && Context.CanCrouch) return typeof(Crouch);
+            if (Context.CrouchAction.WasPressedThisFrame() && !SM.IsStateActive(typeof(Crouch)) && Context.CanCrouch) return typeof(Crouch);
             return null;
         }
 
         public override void OnEnter()
         {
-            if (IsStateActive(typeof(Crouch)))
+            if (SM.IsStateActive(typeof(Crouch)))
             {
                 Context.CanJump = false;
                 Context.CanWalk = false;

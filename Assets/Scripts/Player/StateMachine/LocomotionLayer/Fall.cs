@@ -31,7 +31,7 @@ namespace Player.StateMachine.LocomotionLayer
 
         public override void OnEnter()
         {
-            if (IsStateActive(typeof(LedgeGrab))) _ledgeGrabTimerCounter = 0;
+            if (SM.IsStateActive(typeof(LedgeGrab))) _ledgeGrabTimerCounter = 0;
             else _ledgeGrabTimerCounter = LedgeGrabTimer;
             
             Context.CurrentFallSpeed = Context.FallGravity;

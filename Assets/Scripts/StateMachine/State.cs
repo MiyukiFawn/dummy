@@ -13,7 +13,7 @@ namespace StateMachine
         /// <summary>
         /// Reference to the finite state machine that owns this state.
         /// </summary>
-        private readonly FiniteStateMachine<T> _machine;
+        protected readonly FiniteStateMachine<T> SM;
 
         /// <summary>
         /// Collection of child states indexed by their concrete type.
@@ -34,10 +34,10 @@ namespace StateMachine
         /// Creates a new state instance with a reference to the owning state machine
         /// and an optional parent state in the hierarchy.
         /// </summary>
-        /// <param name="machine">The state machine that owns this state.</param>
-        protected State(FiniteStateMachine<T> machine)
+        /// <param name="sm">The state machine that owns this state.</param>
+        protected State(FiniteStateMachine<T> sm)
         {
-            _machine = machine;
+            SM = sm;
             Children = new Dictionary<Type, T>();
         }
 
@@ -78,8 +78,6 @@ namespace StateMachine
         /// if no transition should occur.
         /// </returns>
         public virtual Type CheckTransition() => null;
-
-        public bool IsStateActive(Type stateType) => _machine.IsStateActive(stateType);
 
         /// <summary>
         /// Called once per update cycle while the state is active.
